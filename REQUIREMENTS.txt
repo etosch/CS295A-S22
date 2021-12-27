@@ -1,0 +1,4 @@
+mkdocs-rss-plugin
+mkdocs-rtd-dropdown
+feedparser
+xmlmerge

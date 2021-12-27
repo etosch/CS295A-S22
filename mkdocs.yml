@@ -1,0 +1,31 @@
+site_name: "Artificial Intelligence"
+site_author: "Emma Tosch (etosch@uvm.edu)"
+site_description: "Public Course Website for CS295A/CS395D S2022 at Universtiy of Vermont"
+docs_dir: "src"
+use_directory_urls: false
+titles_only: true
+site_url: "https://uvm.edu/~etosch/CS295A-S22"
+repo_url: "https://github.com/uvm-maple/CS295A-S22"
+repo_name: "Github"
+edit_url: "tree/main/src/"
+
+theme: 
+  name: "rtd-dropdown"
+
+markdown_extensions:
+  - attr_list
+  - extra
+  - sane_lists
+  - tables
+  - nl2br
+
+nav:
+  - "index.md"
+  - "syllabus.md"
+  - "schedule.md"
+  - "UVM_resources.md"
+  - "covid_policies.md"
+
+plugins: 
+  - rss
+  
