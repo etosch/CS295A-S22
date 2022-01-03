@@ -15,5 +15,9 @@ build:
 	
 
 deploy: build
-	mkdocs gh-deploy
+	(\
+		source venv/bin/activate; \
+		mkdocs gh-deploy; \
+		git add site; \
+	)
 
