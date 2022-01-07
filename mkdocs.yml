@@ -23,8 +23,9 @@ nav:
   - "index.md"
   - "syllabus.md"
   - "schedule.md"
-  - "UVM_resources.md"
+  - "blogging_guidelines.md"
   - "covid_policies.md"
+  - "UVM_resources.md"
 
 plugins: 
   - rss

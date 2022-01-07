@@ -121,4 +121,4 @@ This is not a course in [philsophy](https://www.uvm.edu/courses/phil_111), [psyc
 
 Only your own heart + time can tell!
 
-If however, you are concerned about the background required for this course, please see the [schedule](schedule.html) for [Assignment 0](), and peruse the [evaluation methods](syllabus.html#evaluation).
+If however, you are concerned about the background required for this course, please see the [schedule](schedule.html) for [Assignment 0](https://www.gradescope.com/courses/348861/assignments/1750199), and peruse the [evaluation methods](syllabus.html#grading-system).

@@ -1,10 +1,12 @@
 # Schedule
 
+_This schedule is tentative and subject to change. It may be a bit ambitious._
+
 | Date  | Topic  | Form  |  Deadlines & Notes |
 |---:|---|---|---|
 | Wed, Jan 19 | Intro: What is AI? | Lecture | |
-| Fri, Jan 21 | Knowledge Representation | Lecture | Assignment 0 |
-| Mon, Jan 24 | Propositional Logic | Lecture | **Add Deadline** |
+| Fri, Jan 21 | Knowledge Representation | Lecture | [Syllabus Quest due]() |
+| Mon, Jan 24 | Propositional Logic | Lecture | **Add Deadline**<br/>[Assignment 0]() |
 | Wed, Jan 26 | First Order Logic | Lecture | |
 | Fri, Jan 28 | Applications of Logic in AI  | | |
 | Mon, Jan 31 | Logical Inference | | |
@@ -49,3 +51,4 @@
 | Mon, May 2  | Reinforcement Learning |
 | Wed, May 4  | Summary: Learning from Data |
 | Fri, May 6  | Trends and Hot Topics in AI | | **Last Day of Classes** |
+| Thu, May 12 | **Final Exam** | 7:30am-10:15, VOTEY 207 |
