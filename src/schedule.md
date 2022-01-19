@@ -5,8 +5,8 @@ _This schedule is tentative and subject to change. It may be a bit ambitious._
 | Date  | Topic  | Form  |  Deadlines & Notes |
 |---:|---|---|---|
 | Wed, Jan 19 | Intro: What is AI? | Lecture | |
-| Fri, Jan 21 | Knowledge Representation | Lecture | [Syllabus Quest due]() |
-| Mon, Jan 24 | Propositional Logic | Lecture | **Add Deadline**<br/>[Assignment 0]() |
+| Fri, Jan 21 | Knowledge Representation | Lecture | |
+| Mon, Jan 24 | Propositional Logic | Lecture | **Add Deadline**<br/> |
 | Wed, Jan 26 | First Order Logic | Lecture | |
 | Fri, Jan 28 | Applications of Logic in AI  | | |
 | Mon, Jan 31 | Logical Inference | | |

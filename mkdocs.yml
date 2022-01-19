@@ -10,7 +10,8 @@ repo_name: "Github"
 edit_url: "tree/main/src/"
 
 theme: 
-  name: "rtd-dropdown"
+  # name: "rtd-dropdown"
+  name: "material"
 
 markdown_extensions:
   - attr_list
@@ -24,9 +25,30 @@ nav:
   - "syllabus.md"
   - "schedule.md"
   - "blogging_guidelines.md"
+  - "blog.md"
   - "covid_policies.md"
   - "UVM_resources.md"
+  
 
 plugins: 
   - rss
-  
+  - blogging:
+      dirs:
+        - blog
+
+markdown_extensions:
+  - footnotes
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+      
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

@@ -3,21 +3,15 @@
 
 **Instructor**: Prof. Emma Tosch (she/her) - Emma.Tosch@uvm.edu
 
-During class, I prefer for you to address me as "Prof. Tosch." "Dr. Tosch" and "Prof. Emma" are also acceptable. It is normal for graduate students in computer science to refer to graduate faculty by first name, but due to the mixed enrollments of this class, I would prefer the more formal "Prof. Tosch," at least on fora and during class time.  
-
-Please do not refer to me as "Ms. Tosch," and especially not "Mrs. Tosch." While the rules for address in academia are [complex and political](https://slate.com/human-interest/2014/03/what-should-students-call-their-college-professors.html), refraining from these two is one of the few near-universal norms. 
-
-**TA(s)**: _TBD_
-
-_Note:_ We can expect, at best, a half-TA for this course (i.e., 10 hours of TA time). If enrollment remains high, some parts of this syllabus will be revised to account for personnel limitations.
+**TA(s)**: Michael McConnell - Michael.McConnell@uvm.edu
 
 #### Meeting times and location
 MWF 9:40am-10:30am, Votey 207
 
 #### Student hours (Office hours)
 *	_In-Person_: Mondays, Innovation Hall E456 11am-12:30pm
-*	_Virtual_: Tuesdays, MS Teams, 1-2:30pm
-
+*	_Virtual_: Tuesdays, MS Teams, 2:15-3:45pm
+*   _In-Person_: _End of Week, TBD_
 
 _I am also available over MS Teams chat (may not be synchronous), and by appointment with **24hrs notice**._ Unless you wish to discuss a sensitive issue, please post any questions to the appropriate Teams channel; it is likely that more people will be interested in your question or observation than you realize!
 
@@ -30,12 +24,14 @@ Please see the section on [attendance](covid_policies.html#attendance) on the [c
 #### Platforms and Software 
 We will be using the following tools and technologies:
 
-*	**[Blackboard](https://bb.uvm.edu)** will be used as a portal for important links (i.e., those listed below), for displaying grades, and for occasional polling. 
+*	**[Blackboard](https://bb.uvm.edu)** will be used as a portal for: 
+    * important _links_ (i.e., those listed below)
+    * displaying _grades_
+    * handing in _assignments_
+* **[MS Teams](https://teams.microsoft.com/l/team/19%3a44PI2FE7ujgXtH65yGAe1MGKtSnsp778YVTO4Gb31eY1%40thread.tacv2/conversations?groupId=e1375d3a-909d-4b56-860a-2d7ddc4912a5&tenantId=1c177758-4d6b-43dc-aaeb-3b9c42562967)** will be used for group chats and notifications. If the university mandates remote instruction, we will meet on Teams. _Please turn on Teams notifications, especially for the [Announcements channel](https://teams.microsoft.com/l/channel/19%3a651bd0634b2b4860904830cd9efd50d5%40thread.tacv2/Announcements?groupId=e1375d3a-909d-4b56-860a-2d7ddc4912a5&tenantId=1c177758-4d6b-43dc-aaeb-3b9c42562967) will be used for group chats and notifications._ If the university mandates remote instruction, we will meet on Teams.
 * The **[course website](https://uvm.edu/~etosch/CS295A-S22)** will hold the schedule and a copy of the information in this syllabus. Copies will live on Blackboard and Teams, but this website should be considered the most up-to-date.
-* **[Gradescope](https://www.gradescope.com/courses/348861/assignments/1750199)** will be used for handing in [assignments](#assignments). 
 * **[iClicker Cloud](https://www.uvm.edu/it/kb/article/iclicker-cloud/)** will be used for [in-class quizzes](#in-class-quizzes).
-* A **[Github organization](https://github.com/orgs/uvm-cs295a-s22)** will be used to manage blogging.
-* **[MS Teams](https://teams.microsoft.com/l/team/19%3a44PI2FE7ujgXtH65yGAe1MGKtSnsp778YVTO4Gb31eY1%40thread.tacv2/conversations?groupId=e1375d3a-909d-4b56-860a-2d7ddc4912a5&tenantId=1c177758-4d6b-43dc-aaeb-3b9c42562967)** will be used for group chats. If the university mandates remote instruction, we will meet on Teams. 
+* A **[Github repository](https://github.com/uvm-maple/CS295A-S22-blog-posts)** will be used to manage blogging.
 
 
 #### Mask Policy
@@ -43,8 +39,6 @@ All students are required to wear masks during class, regardless of vaccination 
 
 ### Pre-requisites 
 At present there are no listed pre-requisites for the course. I expect students to have mathematical maturity. We will cover core technical technical background in probability theory and discrete math as needed. I expect some programming experience, but it is possible to achieve a decent grade in this course without it. Students with less background in these areas will likely need to put more time into the course and should plan ahead. 
-
-We will have an [Assignment 0](https://www.gradescope.com/courses/348861/assignments/1750199) due before the add/drop deadline to benchmark where everyone's background is. 
 
 **_I expect any motivated student to be able to excel in this course_**.
 
@@ -115,7 +109,9 @@ Also note that because a maximum of 100 points counts toward your grade, you can
 
 #### How should I plan what to do?
 
-Obviously you should try your hardest at everything. Just kidding! I realize you have other classes and priorities. Here is my suggested plan for success:
+Obviously you should try your hardest at everything. Just kidding! I realize you have other classes and priorities; anyone who tries to tell you otherwise is either an ass or a fool. 
+
+Here is my suggested plan for success:
 
 1. Decide at the **beginning of the semester** how many hours per week you want to spend on this class. 
 2. Decide at the **beginning of each week** which days you will work on this course, and for how long. 
@@ -137,7 +133,7 @@ Blog posts will be due 2 classes after the class the post is about. For example,
 
 ### Assignments
 
-We will have 8 assignments total, split between theory and programming. Both will be due on Gradescope. 
+We will have 8 assignments total, split between theory and programming, both due in Blackboard.
 
 Theory assignments will exercise your skills in: modeling, derviations, complexity analysis, and proofs of correctness or convergence. Programming assignments will give you hands-on experience with the tools and techniques of the course. 
 
@@ -150,7 +146,7 @@ You may work in groups to solve the theory assignments.
 
 ### Exams 
 
-There will four hourly exams and one final. Quarterly exams will take place in the lecture classroom and are closed-book. They will cover the material of the particular unit we are in. The final exam will be cumulative and also closed-book. If you have maxed out your quarterly exams you should plan to not take the final.
+There will four hourly exams and one final. Hourly exams will take place in the lecture classroom and are closed-book. They will cover the material of the particular unit we are in. The final exam will be cumulative and also closed-book. If you have maxed out your quarterly exams you should plan to not take the final.
 
 If you do well on the assignments, you should expect to do well on the exams. **If you finish your exam early and choose to leave early without a valid excuse, you will lose 3pts off your exam.** I would love it if all students learned the material so well that you did not need the full time! However, sometimes folks misread questions or take longer to figure something out. Students leaving can be very distracting with the class being only 50 minutes long and the classroom close to capacity, this means that the potential for some students to become derailed by the noise and movement. Think of the 3 points as an incentive to be considerate of your peers and a tax you pay to have the privilege of leaving early. 
 
