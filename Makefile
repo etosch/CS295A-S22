@@ -11,7 +11,6 @@ build: venv
 		source venv/bin/activate; \
 		git pull; \
 		pip install -r REQUIREMENTS.txt; \
-
 		mkdocs build; \
 		xmlmerge site/feed_rss_created.xml site/feed_rss_updated.xml > site/feed_rss.xml; \
 	)
@@ -23,5 +22,7 @@ deploy: build
 		mkdocs gh-deploy; \
 		cp -r site/* ../CS295A-S22/; \
 		git add site; \
+		git commit -m 'auto-committing from Makefile'; \
+		git push origin main; \
 	)
 

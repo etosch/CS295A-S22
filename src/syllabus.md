@@ -66,7 +66,7 @@ All students will be graded on a points-based system. Points are assigned as fol
 | Homework | [Programming Assignments](#assignments) | 15 | 15 |
 | Exams | [Hourly Exams](#exams) | 25 | 25 |
 | Exams | [Final Exam](#exams) | 100 | 100 |
-| Boundties | [Bounties](#bounties) | 5 | 5 |
+| Bounties | [Bounties](#bounties) | 5 | 5 |
 
 Note that there are well over 100 points available. In fact, there are possible (although not probable!) worlds where a single student could earn over 400 points! However, such worlds might require an unreasonable amount of time and an unfortunate lack of engagement from other students (e.g., such a student might elect to write a blog post for every class). 
 
@@ -94,7 +94,7 @@ To make the grading scheme reasonble, **graduate students** will be graded out o
 | Participation | 0 | 20 |
 | Homework | 0 | 70 | 
 | Exams | 70 | 100 | 
-| Kudos | 0 | 15 |
+| Bounties | 0 | 15 |
 
 Note that the only minimum constraint is that you must take at least some exams. It is possible to bomb several exams and still earn a decent grade. For example, let's suppose you earn the minimum points on the exams and max out the other categories. Some ways this can happen: 
 
