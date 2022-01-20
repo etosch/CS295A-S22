@@ -9,8 +9,8 @@
 MWF 9:40am-10:30am, Votey 207
 
 #### Student hours (Office hours)
-*	_In-Person_: Mondays, Innovation Hall E456 11am-12:30pm
 *	_Virtual_: Tuesdays, MS Teams, 2:15-3:45pm
+*	_In-Person_: Wednesdays, Innovation Hall E456 2:30am-4pm
 *   _In-Person_: _End of Week, TBD_
 
 _I am also available over MS Teams chat (may not be synchronous), and by appointment with **24hrs notice**._ Unless you wish to discuss a sensitive issue, please post any questions to the appropriate Teams channel; it is likely that more people will be interested in your question or observation than you realize!
@@ -66,7 +66,7 @@ All students will be graded on a points-based system. Points are assigned as fol
 | Homework | [Programming Assignments](#assignments) | 15 | 15 |
 | Exams | [Hourly Exams](#exams) | 25 | 25 |
 | Exams | [Final Exam](#exams) | 100 | 100 |
-| Bounties | [Bounties](#bounties) | 5 | 5 |
+
 
 Note that there are well over 100 points available. In fact, there are possible (although not probable!) worlds where a single student could earn over 400 points! However, such worlds might require an unreasonable amount of time and an unfortunate lack of engagement from other students (e.g., such a student might elect to write a blog post for every class). 
 
