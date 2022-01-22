@@ -43,7 +43,7 @@ with open(".schedule", "r") as f:
     if len(lines) > 0:
         last_emailed = parsedate(lines[-1])
 
-email_text = """From: Emma.Tosch@uvm.edu
+email_text = """From: Emma Tosch
 To: {to_email}
 Subject: Blogging for Lecture ({lecture_date})
 
@@ -55,10 +55,11 @@ See the blogging guidelines for more information:
 https://uvm.edu/~etosch/CS295A-S22/blogging_guidelines.html
 """.format(
         to_email = args.email,
-        lecture_date = next_lecture,
-        response_date = (dateparse(next_lecture) + relativedelta(days=-1)).strftime("%a, %b %d"))
+        lecture_date = str(next_lecture).strip(),
+        response_date = (dateparse(next_lecture) + relativedelta(days=-1)).strftime("%a, %b %d").strip())
 
 # if the last email wasn't about this lecture, send
+print("Last emailed: {}, next lecture: {}".format(last_emailed, next_lecture))
 if last_emailed != next_lecture:
     with open(".email.txt", "w") as f:
         f.write(email_text)
