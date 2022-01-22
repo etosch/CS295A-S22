@@ -25,4 +25,3 @@ deploy: build
 		git commit -m 'auto-committing from Makefile'; \
 		git push origin main; \
 	)
-

@@ -1,2 +1,4 @@
 venv
 *.pptx
+__pycache__
+.schedule
