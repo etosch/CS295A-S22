@@ -15,6 +15,14 @@ MWF 9:40am-10:30am, Votey 207
 
 _I am also available over MS Teams chat (may not be synchronous), and by appointment with **24hrs notice**._ Unless you wish to discuss a sensitive issue, please post any questions to the appropriate Teams channel; it is likely that more people will be interested in your question or observation than you realize!
 
+#### Textbook
+
+There is no official text for this class, but much of the content can be found in Russell and Norvig's _Artifical Intelligence: A Modern Approach_ (which I will refer to as R&N). There are now four editions of this book. I will note corresponding chapters to the third edition, when applicable, in the [schedule](schedule.html). There is _a lot_ of vocabulary in this textbook and we will not be following the text in order, which is hwy I will not be assigning reading. Therefore, you should view these references as _strictly supplementary_.
+
+Many of the techniques used in AI and presented in R&N come from other areas of computer science. While the text does an excellent job of providing narrative and historic perspective, there are myriad other resrouces that go into greater depth. When appropriate, I will link these resources on the [schedule](schedule.html).
+
+
+
 
 ### Modality
 This course provides in-person instruction only. In the event that we move to online instruction by university mandate, we will use the provided MS Teams [Team](https://teams.microsoft.com/l/team/19%3aq2RepyJxJt4oOAZ9cSBO7GXwaYUjXvD1Kv2YX3rszCc1%40thread.tacv2/conversations?groupId=37a87e97-f681-44a4-bec6-fe18b2ed5155&tenantId=1c177758-4d6b-43dc-aaeb-3b9c42562967). Please be advised that MS Teams is not fully functional on *Nix operating systems. Please ensure you familiarize yourself with the available [technical support for students](uvm_resources.html#technical-support-for-students). If you need a device for fully participating during a stay-at-home order, please contact [UVM IT](https://www.uvm.edu/cess/technology_services) and your advisor for help acquiring a suitable device.

@@ -2,10 +2,14 @@
 
 _This schedule is tentative and subject to change. It may be a bit ambitious._
 
+[Supplmentary and optional background reading](syllabus.html#textbook) provided when appropriate. 
+
+R&N == _Aritificial Intelligence: A Modern Approach_, Russell and Norvig, 3rd edition.
+
 | Date  | Topic  | Form  |  Deadlines & Notes |
 |---:|---|---|---|
 | Wed, Jan 19 | Intro: What is AI? | [Lecture](lectures/Lec1_Intro_AI.pdf) | |
-| Fri, Jan 21 | Knowledge Representation | Lecture | |
+| Fri, Jan 21 | Knowledge Representation | [Lecture](lectures/Lec2_Knowledge_Representation.pdf) | R&N, Ch. 12, Sec. 1, 2<br/>[Set notation cheatsheet](https://www.maths.usyd.edu.au/u/UG/JM/MATH1901/r/PDF/cheat-sheet.pdf) |
 | Mon, Jan 24 | Propositional Logic | Lecture | **Add Deadline**<br/> |
 | Wed, Jan 26 | First Order Logic | Lecture | |
 | Fri, Jan 28 | Applications of Logic in AI  | Lecture | |
