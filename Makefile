@@ -18,6 +18,7 @@ build: venv
 deploy: build
 	(\
 		source venv/bin/activate; \
+		mkdocs build; \
 		mkdocs gh-deploy; \
 		cp -r site/* ../CS295A-S22/; \
 		git add site; \
