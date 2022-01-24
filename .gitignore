@@ -1,4 +1,5 @@
-venv
-*.pptx
-__pycache__
+notes.txt
 .schedule
+venv
+__pycache__
+*.pptx
