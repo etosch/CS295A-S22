@@ -3,3 +3,6 @@ notes.txt
 venv
 __pycache__
 *.pptx
+.email.txt 
+.send_email.sh
+.*~
