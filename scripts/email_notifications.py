@@ -39,7 +39,7 @@ if not os.path.exists(".schedule"):
 
 last_emailed = None
 with open(".schedule", "r") as f:
-    lines = f.readlines()
+    lines = [ line.strip() for line in f.readlines() if line.strip() ]
     if len(lines) > 0:
         last_emailed = parsedate(lines[-1])
 
