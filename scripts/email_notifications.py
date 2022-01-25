@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 # Extracts the dates from schedule.md marked Lecture
 # and writes those dates - 1 to schedule.txt
 
@@ -7,7 +5,6 @@
 # markdown table, but oh well.
 
 import argparse, os, subprocess
-from email.utils import parsedate
 from urllib import response
 from utils import read_markdown_table
 from dateutil.parser import parse as dateparse
@@ -21,6 +18,7 @@ parser.add_argument("email")
 
 args = parser.parse_args()
 today = date.today()
+sfile = os.path.expanduser("~") + os.path.sep + ".schedule"
 
 schedule = read_markdown_table(args.schedule_file)
 # just get the dates for lectures
@@ -32,19 +30,19 @@ next_lecture = future.iloc[0]
 # we exepect to execute the cron job daily, but 
 # over weekends that means we might send more than one reminder
 # Let's ensure we only send one between now and the next date
-if not os.path.exists(".schedule"):
-    with open(".schedule", "w") as f:
+if not os.path.exists(sfile):
+    with open(sfile, "w") as f:
         # get the last date 
-        pass
+        f.write("")
 
-last_emailed = None
-with open(".schedule", "r") as f:
-    lines = [ line.strip() for line in f.readlines() if line.strip() ]
+last_lecture_emailed = None
+with open(sfile, "r") as f:
+    lines = [line for line in f.readlines() if line.strip()]
     if len(lines) > 0:
-        last_emailed = parsedate(lines[-1])
+        last_lecture_emailed = dateparse(lines[-1])
 
-email_text = """From: Emma Tosch
-To: {to_email}
+email_text = """From: Emma.Tosch
+To: test - Artificial Intelligence _202201-NE-Crosslisted_ CS295A_CS395D <43f7098c.uvmoffice.onmicrosoft.com@amer.teams.ms>
 Subject: Blogging for Lecture ({lecture_date})
 
 @Artificial Intelligence (202201-NE-Crosslisted) CS295A/CS395D The next opportunity to 
@@ -59,15 +57,19 @@ https://uvm.edu/~etosch/CS295A-S22/blogging_guidelines.html
         response_date = (dateparse(next_lecture) + relativedelta(days=-1)).strftime("%a, %b %d").strip())
 
 # if the last email wasn't about this lecture, send
-print("Last emailed: {}, next lecture: {}".format(last_emailed, next_lecture))
-if last_emailed != next_lecture:
-    with open(".email.txt", "w") as f:
+print("Last lecture: {}, next lecture: {}".format(last_lecture_emailed, next_lecture))
+if last_lecture_emailed is None or last_lecture_emailed.strftime("%a, %b %d").strip() != str(next_lecture).strip():
+    print("A")
+    with open(os.path.expanduser("~") + os.path.sep + ".email.txt", "w") as f:
         f.write(email_text)
-    with open(".send_email.sh", "w") as f:
+
+    with open(os.path.expanduser("~") + os.path.sep + ".send_email.sh", "w") as f:
         f.write("sendmail {} < .email.txt".format(args.email))
+
     # write the date to .schedule
-    with open(".schedule", "w") as f:
+    with open(sfile, "w") as f:
         f.write(str(next_lecture)+"\n")    
 else:
+    print("B")
     with open(".send_email.sh", "w") as f:
-        f.write("")
+        f.write("sendmail etosch@uvm.edu < .email.txt")
