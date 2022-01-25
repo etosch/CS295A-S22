@@ -67,7 +67,7 @@ if last_lecture_emailed is None or last_lecture_emailed.strftime("%a, %b %d").st
         f.write("sendmail {} < .email.txt".format(args.email))
 
     # write the date to .schedule
-    with open(sfile, "w") as f:
+    with open(sfile, "a") as f:
         f.write(str(next_lecture)+"\n")    
 else:
     print("B")
