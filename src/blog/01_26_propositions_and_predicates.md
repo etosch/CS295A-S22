@@ -31,7 +31,7 @@ In either case, ⟦·⟧₋ can be implemented in terms of lookups and if-then-e
 ## Predicates as Relations:
 
 Consider the category _B_ of truth values, and whatever category _S_ of nouns/subjects.
-A single proposition (_e.g._ _p_≜`"Six is prime."`) can be represented as a pair of form 
+A single proposition (_e.g._ _p_​≜`"Six is prime."`) can be represented as a pair of form 
 (_s_∈_S_, _R_) where _R_ is a [relation](https://en.wikipedia.org/wiki/Binary_relation) over _S_ and _B_
 (_e.g._ (6, _IsPrime_)).
 
