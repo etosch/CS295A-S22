@@ -11,7 +11,7 @@ MWF 9:40am-10:30am, Votey 207
 #### Student hours (Office hours)
 *	_Virtual_: Tuesdays, MS Teams, 2:15-3:45pm
 *	_In-Person_: Wednesdays, Innovation Hall E456 2:30am-4pm
-*   _In-Person_: _End of Week, TBD_
+*   _In-Person_: Fridays, Innovation Hall E434 3:30-5:00pm
 
 _I am also available over MS Teams chat (may not be synchronous), and by appointment with **24hrs notice**._ Unless you wish to discuss a sensitive issue, please post any questions to the appropriate Teams channel; it is likely that more people will be interested in your question or observation than you realize!
 
