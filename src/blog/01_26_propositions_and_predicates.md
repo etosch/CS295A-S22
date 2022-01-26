@@ -28,21 +28,18 @@ or a pair (_KB_, σ) of a **knowlege base** (a list of statements of the same fo
 and a **storage** of proposition definitions.
 In either case, ⟦·⟧₋ can be implemented in terms of lookups and if-then-else statements. 
 
+
 ## Predicates as Relations:
 
 Consider the category _B_ of truth values, and whatever category _S_ of nouns/subjects.
-A single proposition (_e.g._ _p_ ≜ `"Six is prime."`) can be represented as a pair of form 
-(_s_ ∈ _S_, _R_) where _R_ is a [relation](https://en.wikipedia.org/wiki/Binary_relation) over _S_ and _B_
+A single proposition (_e.g._ _p_≜`"Six is prime."`) can be represented as a pair of form 
+(_s_∈_S_, _R_) where _R_ is a [relation](https://en.wikipedia.org/wiki/Binary_relation) over _S_ and _B_
 (_e.g._ (6, _IsPrime_)).
 
-Not any relation _R_ ⊆ _S_ ⨯ _B_ will serve in the representation of a proposition!
+Not any relation _R_⊆_S_⨯_B_ will serve in the representation of a proposition!
 It must be a **predicate**\*, a relation mapping _every_ element of _S_ to exactly one truth value.
-We use the notation $F(s)$ ≜ (_s_,1) ∈ _F_,
-and we deliberately reuse the "¬" symbol to write ¬ _F_(_s_) ≜ (_s_,0) ∈ _F_.
-
-$$
-what?
-$$
+We use the notation _F_(_s_)≜(_s_,1)∈_F_,
+and we deliberately reuse the "¬" symbol to write ¬_F_(_s_)≜(_s_,0)∈_F_.
 
 <sub>\* Here we consider only _unary_ predicates.
 _Nullary_ predicates are the same as propositions.
@@ -53,23 +50,115 @@ In the context of a relational representation of predicates and propositions,
 we can introduce **quantifiers**.
 (These will be re-introduced when we give predicate logic its own syntax.)
 
-> ∀ _s_ ∈ _S_(_P_(_s_)) ≜ {(_s_,1) | _s_∈_S_} ⊆ _P_  
-> $∃s∈S(P(s)) ≜ ∅ ≠ {(s,1) | s∈S} ∩ P$
+> Universal Quantification:  ∀_s_∈_S_ (_P_(_s_)) ≜ {(_s_,1) | _s_∈_S_} ⊆ _P_  
+> Existential Quantification: ∃_s_∈_S_ (_P_(_s_)) ≜ ∅ ≠ {(_s_,1) | _s_∈_S_} ∩ _P_
 
 Typically the element-hood restriction on _s_ is omitted,
 and _S_ is assumed to be the domain of _P_.
 
+
 ## Predicate Logic Syntax:
 
 Predicates compose into formula just like propositions do. 
+This is what that looks like in BNF:
 
-- We must assume both a set of **variables** 𝒱={_x_, _y_, _z_, ...}  
-  and a set of predicates 𝓟 ≜ {_P_, _Q_, _R_, ...}.
-- The set of atomic formula 𝓕 ≜ {⊤, ⊥}∪{_P_(_x_) | _P_∈𝓟 ∧ _x_∈𝒱).
-- We may also have atomic formula for nullary predicates.
-- All the connectives from propositional syntax are reused.
-- Quantifiers are also connectives. _i.e._ for any _x_∈𝒱 and any _F_∈𝓕, ∀x(_F_)∈𝓕 and ∃x(_F_)∈𝓕.
+| patterns | forms    | meaning |
+|----------|:---------|:--------|
+| _x_      |          | Variables (from some set of identifiers) |
+| _P_      |          | Predicates (from some set of identifiers) |
+| _F_      | ⊤ ⏐ ⊥ ⏐ _P_(_x_) <br/> ¬_F_ ⏐ _F_∧_F_ ⏐ _F_∨_F_ ⏐ _F_→_F_ <br/> ∀_x_ (_F_) ⏐ ∃_x_ (_F_) | Atomic formula (could also include nullary predicates) <br/> Connectives borrowed from Propositional syntax <br/> Quantifiers |
 
+Not inherent in the BNF, but fundamental to understanding predicate logic formula,
+are the ideas of **free variables** and **bound variables**.
+In the formula ∀_x_ (_F_), we say "_x_ is **bound** (_by that specific quantifier node_) in _F_";
+usually we're only interested this if _x_ actually appears in _F_.
+(Existential quantifiers bind variables the same way.)
+If _x_ appears in some _F_ and is not bound by any quantification node in _F_, then we say "_x_ is **free** in _F_".
+Specifically, _an appearence of x_ may be free; it is possible to have both free and bound appearances of a variable in a single syntax tree. 
 
+## Re-write rules:
 
+As a first step toward a _semantics_ for predicate-logic syntax trees, we declare an equivalence relation (and therefor equivalence classes).
+When we discussed propositional logic, we considered the (reflexive, symmetric, transitive) relation
+_a_≡_b_ ≜ ⟦_a_⟧=⟦_b_⟧ _("for all suitable assignments")_.
+Equivalence here is similar, we just haven't discussed ⟦·⟧ yet. 
+
+Usually, we're interested in these equivalence classes because they define our re-write rules for formula:
+if _F_≡_G_ then we can use _G_ anywhere we were using _F_. 
+
+### Example:
+
+This example from class shows re-write steps from one representation of the required property of a predicate into its usual presentation:
+
+| Justification                 | formula |
+|------------------------------:|---------|
+| Start  ("_P_ is a predicate")           | ∀_f_ ∀_f'_ ∀_b_       ( (_f_=_f'_ ∧ (_f_,_b_)∈_P_) → ¬∃_b'_ (_b_≠_b'_ ∧ (_f'_,_b'_)∈_P_) ) |
+| Distribute negation across existence   | ∀_f_ ∀_f'_ ∀_b_       ( (_f_=_f'_ ∧ (_f_,_b_)∈_P_) → ∀_b'_ ¬(_b_≠_b'_ ∧ (_f'_,_b'_)∈_P_) ) |
+| Distribute negation across conjunction | ∀_f_ ∀_f'_ ∀_b_       ( (_f_=_f'_ ∧ (_f_,_b_)∈_P_) → ∀_b'_  (_b_=_b'_ ∨ (_f'_,_b'_)∉_P_) ) |
+| Move quantifier up (no name conflicts!) | ∀_f_ ∀_f'_ ∀_b_ ∀_b'_ ( (_f_=_f'_ ∧ (_f_,_b_)∈_P_) →        (_b_=_b'_ ∨ (_f'_,_b'_)∉_P_) ) |
+| Definition of implication               | ∀_f_ ∀_f'_ ∀_b_ ∀_b'_ (¬(_f_=_f'_ ∧ (_f_,_b_)∈_P_) ∨        (_b_=_b'_ ∨ (_f'_,_b'_)∉_P_) ) |
+| Distribute negation across conjunction | ∀_f_ ∀_f'_ ∀_b_ ∀_b'_ ( (_f_≠_f'_ ∨ (_f_,_b_)∉_P_) ∨        (_b_=_b'_ ∨ (_f'_,_b'_)∉_P_) ) |
+| Associativity of disjunction            | ∀_f_ ∀_f'_ ∀_b_ ∀_b'_ ( ((_f_,_b_)∉_P_ ∨ (_f'_,_b'_)∉_P_) ∨        (_f_≠_f'_ ∨ _b_=_b'_) ) |
+| Factor out negation from disjunction    | ∀_f_ ∀_f'_ ∀_b_ ∀_b'_ (¬((_f_,_b_)∈_P_ ∧ (_f'_,_b'_)∈_P_) ∨        (_f_≠_f'_ ∨ _b_=_b'_) ) |
+| Definition of implication               | ∀_f_ ∀_f'_ ∀_b_ ∀_b'_ ( ((_f_,_b_)∈_P_ ∧ (_f'_,_b'_)∈_P_) →        (_f_≠_f'_ ∨ _b_=_b'_) ) |
+
+It's not clear that this example actually fits into the syntax as introduced. 
+For the purpose of example, let's fix that. 
+Our goal is to show the same sequence of re-writes, but at every step our formula should be a valid tree in our BNF.
+
+First we'll extend our syntax to allow binary predicates.
+Here "=" is just an atomic symbol in our grammar/syntax, in the set of all predicates. 
+We'll use it as a binary predicate; if we had semantics or a more advanced grammar we would enforce that.
+While we intuitively understand it to mean "equality", that idea is _not_ encoded in the syntax. 
+Similarly, I here use the un-italicized P to refer to a _binary_ predicate "is a predicate", who's right-hand argument is a truth value,
+but neither the semantics of P nor the idea of a truth value is encoded in the syntax.
+
+| patterns | forms    | meaning |
+|----------|:---------|:--------|
+| _x_      | f ⏐ f' ⏐ b ⏐ b'         | Variables (that we'll use) |
+| _P_      | P ⏐ =                   | Predicates (that we'll use) |
+| _F_      | ⊤ ⏐ ⊥ ⏐ _P_(_x_) ⏐ _x_ _P_ _x_ <br/> ¬_F_ ⏐ _F_∧_F_ ⏐ _F_∨_F_ ⏐ _F_→_F_ <br/> ∀_x_ (_F_) ⏐ ∃_x_ (_F_) | Add binary predicates <br/> No change <br/> No change |
+
+And then we can proceed:
+
+| Justification                 | formula |
+|------------------------------:|---------|
+| Start                                   | ∀_f_ (∀_f'_ (∀_b_        ( (_f_=_f'_  ∧  _f_ P _b_) → ¬∃_b'_ ( (¬_b_=_b'_  ∧  _f'_ P _b'_) ) ) ) ) |
+| Distribute negation across existence   | ∀_f_ (∀_f'_ (∀_b_        ( (_f_=_f'_  ∧  _f_ P _b_) →  ∀_b'_ (¬(¬_b_=_b'_  ∧  _f'_ P _b'_) ) ) ) ) |
+| Distribute negation across conjunction | ∀_f_ (∀_f'_ (∀_b_        ( (_f_=_f'_  ∧  _f_ P _b_) →  ∀_b'_ ( (¬¬_b_=_b'_ ∨ ¬_f'_ P _b'_) ) ) ) ) |
+| Remove double negation                  | ∀_f_ (∀_f'_ (∀_b_        ( (_f_=_f'_  ∧  _f_ P _b_) →  ∀_b'_ ( (_b_=_b'_   ∨ ¬_f'_ P _b'_) ) ) ) ) |
+| Move quantifier up                      | ∀_f_ (∀_f'_ (∀_b_ (∀_b'_ ( (_f_=_f'_  ∧  _f_ P _b_) →          (_b_=_b'_   ∨ ¬_f'_ P _b'_) ) ) ) ) |
+| Definition of implication               | ∀_f_ (∀_f'_ (∀_b_ (∀_b'_ (¬(_f_=_f'_  ∧  _f_ P _b_) ∨          (_b_=_b'_   ∨ ¬_f'_ P _b'_) ) ) ) ) |
+| Distribute negation across conjunction | ∀_f_ (∀_f'_ (∀_b_ (∀_b'_ ( (¬_f_=_f'_ ∨ ¬_f_ P _b_) ∨          (_b_=_b'_   ∨ ¬_f'_ P _b'_) ) ) ) ) |
+| Associativity of disjunction            | ∀_f_ (∀_f'_ (∀_b_ (∀_b'_ ( (¬_f_ P _b_ ∨ ¬_f'_ P _b'_) ∨          (¬_f_=_f'_   ∨ _b_=_b'_) ) ) ) ) |
+| Factor out negation from disjunction    | ∀_f_ (∀_f'_ (∀_b_ (∀_b'_ (¬(_f_ P _b_  ∧ _f'_ P _b'_)  ∨          (¬_f_=_f'_   ∨ _b_=_b'_) ) ) ) ) |
+| Definition of implication               | ∀_f_ (∀_f'_ (∀_b_ (∀_b'_ ( (_f_ P _b_  ∧ _f'_ P _b'_)  →          (¬_f_=_f'_   ∨ _b_=_b'_) ) ) ) ) |
+| One more step for the fun of it         | ∀_f_ (∀_f'_ (∀_b_ (∀_b'_ ( (_f_ P _b_  ∧ _f'_ P _b'_)  →          (_f_=_f'_   →  _b_=_b'_) ) ) ) ) |
+
+The double-implication isn't excellent, it might read more clearly if we took a different route from the sixth line:
+
+| Justification                 | formula |
+|------------------------------:|---------|
+| Sixth line from above                      | ∀_f_ (∀_f'_ (∀_b_ (∀_b'_ (   (¬_f_=_f'_ ∨ ¬_f_ P _b_)    ∨ (_b_=_b'_   ∨ ¬_f'_ P _b'_) ) ) ) ) |
+| Associativity of disjunction               | ∀_f_ (∀_f'_ (∀_b_ (∀_b'_ ( ( (¬_f_ P _b_ ∨ ¬_f'_ P _b'_) ∨ ¬_f_=_f'_ ) ∨ _b_=_b'_ ) ) ) ) |
+| Factor out negation from disjunction       | ∀_f_ (∀_f'_ (∀_b_ (∀_b'_ ( (¬(_f_ P _b_  ∧ _f'_ P _b'_)  ∨ ¬_f_=_f'_ ) ∨ _b_=_b'_ ) ) ) ) |
+| Factor out negation from disjunction       | ∀_f_ (∀_f'_ (∀_b_ (∀_b'_ (¬( (_f_ P _b_  ∧ _f'_ P _b'_)  ∧  _f_=_f'_ ) ∨ _b_=_b'_ ) ) ) ) |
+| Definition of implication                  | ∀_f_ (∀_f'_ (∀_b_ (∀_b'_ ( ( (_f_ P _b_  ∧ _f'_ P _b'_)  ∧  _f_=_f'_ ) → _b_=_b'_ ) ) ) ) |
+| Cull parentheses (not technically allowed) | ∀_f_ ∀_f'_ ∀_b_ ∀_b'_ ( ( _f_ P _b_  ∧ _f'_ P _b'_  ∧  _f_=_f'_ ) → _b_=_b'_ ) |
+
+Returning to our intuitive understanding of the nature of predicates,
+we can see that this doesn't entirely capture the refinement of Relations that we want; P is not necessarily Total. 
+We could express totality as
+
+> ∀_f_ (∃_b_ (_f_ P _b_)
+
+but that (combined with the above property) would just limit us to _functions_;
+predicates must range over truth values. 
+There are a few approaches we could take,
+probably the easiest of which would be to associate variables _bT_ and _bF_ with "boolean true" and "boolean false". 
+Then we could just say
+
+> ∀_f_ (_f_ P _bT_ ∨ _f_ P _bF_)
+
+Which suffices to get us a law-of-excluded-middle in this weird logic-inside-of-logic we've built. 
 
