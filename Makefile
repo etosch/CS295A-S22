@@ -1,10 +1,9 @@
 SHELL:=/bin/bash
 PYTHON=$(shell [ -z "`which python3`" ] && echo "python" || echo "python3")
-PIP=$(shell [ -z "`which pip3`" ] && echo "pip" || echo "pip3")
 .PHONY: build deploy clean
 
 venv:
-	$(PYTHON) -m venv venv && $(PIP) install -r REQUIREMENTS.txt 
+	$(PYTHON) -m venv venv && source venv/bin/activate && pip install -r REQUIREMENTS.txt 
 
 build: venv
 	( \
