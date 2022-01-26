@@ -17,7 +17,7 @@ _I am also available over MS Teams chat (may not be synchronous), and by appoint
 
 #### Textbook
 
-There is no official text for this class, but much of the content can be found in Russell and Norvig's _Artifical Intelligence: A Modern Approach_ (which I will refer to as R&N). There are now four editions of this book. I will note corresponding chapters to the third edition, when applicable, in the [schedule](schedule.html). There is _a lot_ of vocabulary in this textbook and we will not be following the text in order, which is hwy I will not be assigning reading. Therefore, you should view these references as _strictly supplementary_.
+There is no official text for this class, but much of the content can be found in Russell and Norvig's _Artifical Intelligence: A Modern Approach_ (which I will refer to as R&N). There are now four editions of this book. I will note corresponding chapters to the third edition, when applicable, in the [schedule](schedule.html). There is _a lot_ of vocabulary in this textbook and we will not be following the text in order, which is why I will not be assigning reading. Therefore, you should view these references as _strictly supplementary_.
 
 Many of the techniques used in AI and presented in R&N come from other areas of computer science. While the text does an excellent job of providing narrative and historic perspective, there are myriad other resrouces that go into greater depth. When appropriate, I will link these resources on the [schedule](schedule.html).
 

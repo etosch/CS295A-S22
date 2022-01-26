@@ -11,9 +11,9 @@ R&N == _Aritificial Intelligence: A Modern Approach_, Russell and Norvig, 3rd ed
 | Wed, Jan 19 | Intro: What is AI? | [Lecture](lectures/Lec1_Intro_AI.pdf) | |
 | Fri, Jan 21 | Knowledge Representation | [Lecture](lectures/Lec2_Knowledge_Representation.pdf) | R&N: 12.1, 12.2<br/>[Set notation cheatsheet](https://www.maths.usyd.edu.au/u/UG/JM/MATH1901/r/PDF/cheat-sheet.pdf) |
 | Mon, Jan 24 | Propositional Logic | [Lecture](lectures/Lec3____Propositional_Logic.pdf) | **Add Deadline**<br/>R&N: 7.3  |
-| Wed, Jan 26 | First Order Logic | Lecture | |
-| Fri, Jan 28 | Applications of Logic in AI  | Lecture | |
-| Mon, Jan 31 | Logical Inference | Lecture | |
+| Wed, Jan 26 | First Order Logic | [Lecture](lectures/) | |
+| Fri, Jan 28 | Logical Inference  | Lecture | |
+| Mon, Jan 31 | Applications of Logic in AI | Lecture | |
 | Wed, Feb 2  | Logic Programming | Lecture | |
 | Fri, Feb 4  | Application: Planning | Live Coding | **Drop Deadline** |
 | Mon, Feb 7  | Exam 1: Logic | Exam | |
