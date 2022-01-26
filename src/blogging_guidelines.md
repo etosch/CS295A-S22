@@ -76,7 +76,7 @@ When you are ready to submit, follow these steps:
     1. `git add src/blog/<month>_<day>_<lecture title>.md`
     2. `git commit -m 'new blog post'`
     3. `git push origin main`
-8. Open a [pull request](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/working-with-your-remote-repository-on-github-or-github-enterprise/creating-an-issue-or-pull-request) against the parent (remote) repository.
+8. Open a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork) against the parent (remote) repository.
 
 The first time you submit a blog post, you should be prompted to agree to the [consent form](https://gist.github.com/etosch/ad909c10f5da4e60bea125d15e47edcf), notifying you of your FERPA rights and trasferring responsibility for management of personally identifying information to you.
 
