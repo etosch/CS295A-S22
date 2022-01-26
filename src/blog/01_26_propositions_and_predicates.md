@@ -37,8 +37,12 @@ A single proposition (_e.g._ _p_ ≜ `"Six is prime."`) can be represented as a 
 
 Not any relation _R_ ⊆ _S_ ⨯ _B_ will serve in the representation of a proposition!
 It must be a **predicate**\*, a relation mapping _every_ element of _S_ to exactly one truth value.
-We use the notation _F_(_s_) ≜ (_s_,1) ∈ _F_,
+We use the notation $F(s)$ ≜ (_s_,1) ∈ _F_,
 and we deliberately reuse the "¬" symbol to write ¬ _F_(_s_) ≜ (_s_,0) ∈ _F_.
+
+$$
+what?
+$$
 
 <sub>\* Here we consider only _unary_ predicates.
 _Nullary_ predicates are the same as propositions.
