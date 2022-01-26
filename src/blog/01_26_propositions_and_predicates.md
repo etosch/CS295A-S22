@@ -32,13 +32,13 @@ In either case, ⟦·⟧₋ can be implemented in terms of lookups and if-then-e
 
 Consider the category _B_ of truth values, and whatever category _S_ of nouns/subjects.
 A single proposition (_e.g._ _p_ ≜ `"Six is prime."`) can be represented as a pair of form 
-(_s_∈_S_, _R_) where _R_ is a [relation](https://en.wikipedia.org/wiki/Binary_relation) over _S_ and _B_
+(_s_ ∈ _S_, _R_) where _R_ is a [relation](https://en.wikipedia.org/wiki/Binary_relation) over _S_ and _B_
 (_e.g._ (6, _IsPrime_)).
 
-Not any relation _R_⊆_S_⨯_B_ will serve in the representation of a proposition!
+Not any relation _R_ ⊆ _S_ ⨯ _B_ will serve in the representation of a proposition!
 It must be a **predicate**\*, a relation mapping _every_ element of _S_ to exactly one truth value.
-We use the notation _F_(_s_)≜(_s_,1)∈_F_,
-and we deliberately reuse the "¬" symbol to write ¬_F_(_s_)≜(_s_,0)∈_F_.
+We use the notation _F_(_s_) ≜ (_s_,1) ∈ _F_,
+and we deliberately reuse the "¬" symbol to write ¬ _F_(_s_) ≜ (_s_,0) ∈ _F_.
 
 <sub>\* Here we consider only _unary_ predicates.
 _Nullary_ predicates are the same as propositions.
@@ -49,8 +49,8 @@ In the context of a relational representation of predicates and propositions,
 we can introduce **quantifiers**.
 (These will be re-introduced when we give predicate logic its own syntax.)
 
-> ∀_s_∈_S_(_P_(_s_)) ≜ {(_s_,1) | _s_∈_S_} ⊆ _P_  
-> ∃_s_∈_S_(_P_(_s_)) ≜ ∅ ≠ {(_s_,1) | _s_∈_S_} ∩ _P_
+> ∀ _s_ ∈ _S_(_P_(_s_)) ≜ {(_s_,1) | _s_∈_S_} ⊆ _P_  
+> $∃s∈S(P(s)) ≜ ∅ ≠ {(s,1) | s∈S} ∩ P$
 
 Typically the element-hood restriction on _s_ is omitted,
 and _S_ is assumed to be the domain of _P_.
