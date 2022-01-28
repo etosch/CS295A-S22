@@ -1,0 +1,683 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Public Course Website for CS295A/CS395D S2022 at Universtiy of Vermont">
+      
+      
+        <meta name="author" content="Emma Tosch (etosch@uvm.edu)">
+      
+      
+        <link rel="canonical" href="https://uvm.edu/~etosch/CS295A-S22/blog/01_26_propositions_and_predicates.html">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7">
+    
+    
+      
+        <title>Introduction to Predicates - Artificial Intelligence</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.cd566b2a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-to-predicates" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Artificial Intelligence" class="md-header__button md-logo" aria-label="Artificial Intelligence" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Artificial Intelligence
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction to Predicates
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/uvm-maple/CS295A-S22/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Artificial Intelligence" class="md-nav__button md-logo" aria-label="Artificial Intelligence" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Artificial Intelligence
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/uvm-maple/CS295A-S22/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        CS 295A/395D: Artificial Intelligence
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../syllabus.html" class="md-nav__link">
+        Syllabus
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedule.html" class="md-nav__link">
+        Schedule
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blogging_guidelines.html" class="md-nav__link">
+        Blogging Guidelines
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog.html" class="md-nav__link">
+        Course Blog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../covid_policies.html" class="md-nav__link">
+        Covid Policies
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UVM_resources.html" class="md-nav__link">
+        UVM Resources
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recap-of-propositions" class="md-nav__link">
+    Recap of Propositions:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predicates-as-relations" class="md-nav__link">
+    Predicates as Relations:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predicate-logic-syntax" class="md-nav__link">
+    Predicate Logic Syntax:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#re-write-rules" class="md-nav__link">
+    Re-write rules:
+  </a>
+  
+    <nav class="md-nav" aria-label="Re-write rules:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/uvm-maple/CS295A-S22/edit/master/docs/blog/01_26_propositions_and_predicates.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="introduction-to-predicates">Introduction to Predicates</h1>
+<h2 id="recap-of-propositions">Recap of Propositions:</h2>
+<p>For the purpose of propositional logic, <strong>propositions</strong> are (almost) atomic black-boxes:
+They have <em>names</em> and <em>definitions</em>, but their names are just atomic symbols in the logic syntax,
+and their definitions are <em>outside</em> the logic syntax (usually these are statements in a human language).</p>
+<p>The set of all propositions, together with the special symbols ⊤ and ⊥,
+are the atomic symbols of the syntax of <strong>formulas</strong>.
+The connectives will be familiar from their roles as boolean operators: ¬, ∧ ,∨, →, <em>etc</em>.
+Thus, formulas are recursive trees with connectives as nodes and atomic symbols as leaves. </p>
+<p>There are two truth values: 1 and 0.
+(These are not part of the syntax of formulas.)
+These can go by other names, commonly <em>"true"</em> and <em>"false"</em>.
+The properties and isomorphisms of <a href="https://en.wikipedia.org/wiki/Boolean_algebra">Boolean Algebra</a>
+are all good fun, but for now we can simply take <strong>truth values</strong> ≜ {1, 0}.</p>
+<p>The operator <strong>⟦·⟧</strong> maps formula to truth values; <em>e.g.</em> ⟦⊤⟧=1.
+(This example is actually part of the definition of ⟦·⟧;
+⊤ and ⊥ are given meaning respectively as an atomic tautology and an atomic contradiction.)
+Although it's often left implicit, it technically has a subscript argument,
+either an <strong>assignment</strong> (a set of (<em>proposition</em>, <em>truth value</em>) pairs)
+or a pair (<em>KB</em>, σ) of a <strong>knowlege base</strong> (a list of statements of the same form as proposition definitions)
+and a <strong>storage</strong> of proposition definitions.
+In either case, ⟦·⟧₋ can be implemented in terms of lookups and if-then-else statements. </p>
+<h2 id="predicates-as-relations">Predicates as Relations:</h2>
+<p>Consider the category <em>B</em> of truth values, and whatever category <em>S</em> of nouns/subjects.
+A single proposition (<em>e.g.</em> <em>p</em>≜<code>"Six is prime."</code>) can be represented as a pair of form 
+(<em>s</em>∈<em>S</em>, <em>R</em>) where <em>R</em> is a <a href="https://en.wikipedia.org/wiki/Binary_relation">relation</a> over <em>S</em> and truth values
+(<em>e.g.</em> (6, <em>IsPrime</em>)). 
+Rather than writing it as a tuple "(<em>s</em>, <em>R</em>)", we can instead write it as "<em>R</em>(<em>s</em>)", which is the normal notation. </p>
+<p>Not any relation <em>R</em>⊆<em>S</em>⨯<em>B</em> will serve in the representation of a proposition!
+It must be a <strong>predicate</strong>*, a relation mapping <em>every</em> element of <em>S</em> to exactly one truth value.
+We use the notation <em>F</em>(<em>s</em>)≜(<em>s</em>,1)∈<em>F</em>,
+and we deliberately reuse the "¬" symbol to write ¬<em>F</em>(<em>s</em>)≜(<em>s</em>,0)∈<em>F</em>.</p>
+<p><sub>* Here we consider only <em>unary</em> predicates.
+<em>Nullary</em> predicates are the same as propositions.
+Higher-artiy predicates are also possible.
+Also, it's not clear if predicates really have to be <em>total</em> functions; if you know know please share!
+</sub></p>
+<p>In the context of a relational representation of predicates and propositions,
+we can introduce <strong>quantifiers</strong>.</p>
+<blockquote>
+<p>Universal Quantification:  ∀<em>s</em>∈<em>S</em> (<em>P</em>(<em>s</em>)) ≜ {(<em>s</em>,1) | <em>s</em>∈<em>S</em>} ⊆ <em>P</em><br />
+Existential Quantification: ∃<em>s</em>∈<em>S</em> (<em>P</em>(<em>s</em>)) ≜ ∅ ≠ {(<em>s</em>,1) | <em>s</em>∈<em>S</em>} ∩ <em>P</em></p>
+</blockquote>
+<p>Typically the element-hood restriction on <em>s</em> is omitted, and <em>S</em> is assumed to be the domain of <em>P</em>,
+but quantification over subsets of the domain is fine. 
+In particular, notice that ∀<em>s</em>∈∅ (<em>P</em>(<em>s</em>)) is a tautology and ∃<em>s</em>∈∅ (<em>P</em>(<em>s</em>)) is a contradiction, regardless of <em>P</em>.</p>
+<h2 id="predicate-logic-syntax">Predicate Logic Syntax:</h2>
+<p>In the prior section we introduced the notions and notations of predicates and quantifiers;
+here we introduce a formal syntax for them. 
+While in the prior section we gave predicates meaning as relations, and gave quantifiers meaning in terms of set-theory,
+<em>here we will treat them as pure symbols</em>.
+They'll get (possibly contextual) meanings again later when we define a semantics.</p>
+<p>Predicates compose into formula just like propositions do. 
+This is what that looks like in BNF:</p>
+<table>
+<thead>
+<tr>
+<th>patterns</th>
+<th align="left">forms</th>
+<th align="left">notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>x</em></td>
+<td align="left"></td>
+<td align="left">Variables (from some set of identifiers)</td>
+</tr>
+<tr>
+<td><em>P</em></td>
+<td align="left"></td>
+<td align="left">Predicates (from some set of identifiers)</td>
+</tr>
+<tr>
+<td><em>F</em></td>
+<td align="left">⊤ ⏐ ⊥ ⏐ <em>P</em>(<em>x</em>) <br/> ¬<em>F</em> ⏐ <em>F</em>∧<em>F</em> ⏐ <em>F</em>∨<em>F</em> ⏐ <em>F</em>→<em>F</em> <br/> ∀<em>x</em> (<em>F</em>) ⏐ ∃<em>x</em> (<em>F</em>)</td>
+<td align="left">Atomic formula (could also include nullary predicates) <br/> Connectives borrowed from Propositional syntax <br/> Quantifiers</td>
+</tr>
+</tbody>
+</table>
+<p>Not inherent in the BNF, but fundamental to understanding predicate logic formula,
+are the ideas of <strong>free variables</strong> and <strong>bound variables</strong>.
+In the formula ∀<em>x</em> (<em>F</em>), we say "<em>x</em> is <strong>bound</strong> (<em>by that specific quantifier node</em>) in <em>F</em>";
+usually we're only interested this if <em>x</em> actually appears in <em>F</em>.
+(Existential quantifiers bind variables the same way.)
+If <em>x</em> appears in some <em>F</em> and is not bound by any quantification node in <em>F</em>, then we say "<em>x</em> is <strong>free</strong> in <em>F</em>".
+Specifically, <em>an appearence of x</em> may be free; it is possible to have both free and bound appearances of a variable in a single syntax tree. </p>
+<h2 id="re-write-rules">Re-write rules:</h2>
+<p>As a first step toward a <em>semantics</em> for predicate-logic syntax trees, we declare an equivalence relation (and therefor equivalence classes).
+When we discussed propositional logic, we considered the (reflexive, symmetric, transitive) relation
+<em>a</em>≡<em>b</em> ≜ ⟦<em>a</em>⟧=⟦<em>b</em>⟧ <em>("for all suitable assignments")</em>.
+Equivalence here is similar, we just haven't discussed ⟦·⟧ yet. </p>
+<p>Usually, we're interested in these equivalence classes because they define our re-write rules for formula:
+if <em>F</em>≡<em>G</em> then we can use <em>G</em> anywhere we were using <em>F</em>. </p>
+<h3 id="example">Example:</h3>
+<p>This example from class shows re-write steps from one representation of the required property of a predicate into its usual presentation:</p>
+<table>
+<thead>
+<tr>
+<th align="right">Justification</th>
+<th>formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">Start  ("<em>P</em> is a predicate")</td>
+<td>∀<em>f</em> ∀<em>f'</em> ∀<em>b</em>       ( (<em>f</em>=<em>f'</em> ∧ (<em>f</em>,<em>b</em>)∈<em>P</em>) → ¬∃<em>b'</em> (<em>b</em>≠<em>b'</em> ∧ (<em>f'</em>,<em>b'</em>)∈<em>P</em>) )</td>
+</tr>
+<tr>
+<td align="right">Distribute negation across existence</td>
+<td>∀<em>f</em> ∀<em>f'</em> ∀<em>b</em>       ( (<em>f</em>=<em>f'</em> ∧ (<em>f</em>,<em>b</em>)∈<em>P</em>) → ∀<em>b'</em> ¬(<em>b</em>≠<em>b'</em> ∧ (<em>f'</em>,<em>b'</em>)∈<em>P</em>) )</td>
+</tr>
+<tr>
+<td align="right">Distribute negation across conjunction</td>
+<td>∀<em>f</em> ∀<em>f'</em> ∀<em>b</em>       ( (<em>f</em>=<em>f'</em> ∧ (<em>f</em>,<em>b</em>)∈<em>P</em>) → ∀<em>b'</em>  (<em>b</em>=<em>b'</em> ∨ (<em>f'</em>,<em>b'</em>)∉<em>P</em>) )</td>
+</tr>
+<tr>
+<td align="right">Move quantifier up (no name conflicts!)</td>
+<td>∀<em>f</em> ∀<em>f'</em> ∀<em>b</em> ∀<em>b'</em> ( (<em>f</em>=<em>f'</em> ∧ (<em>f</em>,<em>b</em>)∈<em>P</em>) →        (<em>b</em>=<em>b'</em> ∨ (<em>f'</em>,<em>b'</em>)∉<em>P</em>) )</td>
+</tr>
+<tr>
+<td align="right">Definition of implication</td>
+<td>∀<em>f</em> ∀<em>f'</em> ∀<em>b</em> ∀<em>b'</em> (¬(<em>f</em>=<em>f'</em> ∧ (<em>f</em>,<em>b</em>)∈<em>P</em>) ∨        (<em>b</em>=<em>b'</em> ∨ (<em>f'</em>,<em>b'</em>)∉<em>P</em>) )</td>
+</tr>
+<tr>
+<td align="right">Distribute negation across conjunction</td>
+<td>∀<em>f</em> ∀<em>f'</em> ∀<em>b</em> ∀<em>b'</em> ( (<em>f</em>≠<em>f'</em> ∨ (<em>f</em>,<em>b</em>)∉<em>P</em>) ∨        (<em>b</em>=<em>b'</em> ∨ (<em>f'</em>,<em>b'</em>)∉<em>P</em>) )</td>
+</tr>
+<tr>
+<td align="right">Associativity of disjunction</td>
+<td>∀<em>f</em> ∀<em>f'</em> ∀<em>b</em> ∀<em>b'</em> ( ((<em>f</em>,<em>b</em>)∉<em>P</em> ∨ (<em>f'</em>,<em>b'</em>)∉<em>P</em>) ∨        (<em>f</em>≠<em>f'</em> ∨ <em>b</em>=<em>b'</em>) )</td>
+</tr>
+<tr>
+<td align="right">Factor out negation from disjunction</td>
+<td>∀<em>f</em> ∀<em>f'</em> ∀<em>b</em> ∀<em>b'</em> (¬((<em>f</em>,<em>b</em>)∈<em>P</em> ∧ (<em>f'</em>,<em>b'</em>)∈<em>P</em>) ∨        (<em>f</em>≠<em>f'</em> ∨ <em>b</em>=<em>b'</em>) )</td>
+</tr>
+<tr>
+<td align="right">Definition of implication</td>
+<td>∀<em>f</em> ∀<em>f'</em> ∀<em>b</em> ∀<em>b'</em> ( ((<em>f</em>,<em>b</em>)∈<em>P</em> ∧ (<em>f'</em>,<em>b'</em>)∈<em>P</em>) →        (<em>f</em>≠<em>f'</em> ∨ <em>b</em>=<em>b'</em>) )</td>
+</tr>
+</tbody>
+</table>
+<p>It's not clear that this example actually fits into the syntax as introduced. 
+For the purpose of example, let's fix that. 
+Our goal is to show the same sequence of re-writes, but at every step our formula should be a valid tree in our BNF.</p>
+<p>First we'll extend our syntax to allow binary predicates.
+Here "=" is just an atomic symbol in our grammar/syntax, in the set of all predicates. 
+We'll use it as a binary predicate; if we had semantics or a more advanced grammar we would enforce that.
+While we intuitively understand it to mean "equality", that idea is <em>not</em> encoded in the syntax. 
+Similarly, I here use the un-italicized P to refer to a <em>binary</em> predicate "is a predicate", who's right-hand argument is a truth value,
+but neither the semantics of P nor the idea of a truth value is encoded in the syntax.</p>
+<table>
+<thead>
+<tr>
+<th>patterns</th>
+<th align="left">forms</th>
+<th align="left">notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>x</em></td>
+<td align="left">f ⏐ f' ⏐ b ⏐ b'</td>
+<td align="left">Variables (that we'll use)</td>
+</tr>
+<tr>
+<td><em>P</em></td>
+<td align="left">P ⏐ =</td>
+<td align="left">Predicates (that we'll use)</td>
+</tr>
+<tr>
+<td><em>F</em></td>
+<td align="left">⊤ ⏐ ⊥ ⏐ <em>P</em>(<em>x</em>) ⏐ <em>x</em> <em>P</em> <em>x</em> <br/> ¬<em>F</em> ⏐ <em>F</em>∧<em>F</em> ⏐ <em>F</em>∨<em>F</em> ⏐ <em>F</em>→<em>F</em> <br/> ∀<em>x</em> (<em>F</em>) ⏐ ∃<em>x</em> (<em>F</em>)</td>
+<td align="left">Add binary predicates <br/> No change <br/> No change</td>
+</tr>
+</tbody>
+</table>
+<p>And then we can proceed:</p>
+<table>
+<thead>
+<tr>
+<th align="right">Justification</th>
+<th>formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">Start</td>
+<td>∀<em>f</em> (∀<em>f'</em> (∀<em>b</em>        ( (<em>f</em>=<em>f'</em>  ∧  <em>f</em> P <em>b</em>) → ¬∃<em>b'</em> ( (¬<em>b</em>=<em>b'</em>  ∧  <em>f'</em> P <em>b'</em>) ) ) ) )</td>
+</tr>
+<tr>
+<td align="right">Distribute negation across existence</td>
+<td>∀<em>f</em> (∀<em>f'</em> (∀<em>b</em>        ( (<em>f</em>=<em>f'</em>  ∧  <em>f</em> P <em>b</em>) →  ∀<em>b'</em> (¬(¬<em>b</em>=<em>b'</em>  ∧  <em>f'</em> P <em>b'</em>) ) ) ) )</td>
+</tr>
+<tr>
+<td align="right">Distribute negation across conjunction</td>
+<td>∀<em>f</em> (∀<em>f'</em> (∀<em>b</em>        ( (<em>f</em>=<em>f'</em>  ∧  <em>f</em> P <em>b</em>) →  ∀<em>b'</em> ( (¬¬<em>b</em>=<em>b'</em> ∨ ¬<em>f'</em> P <em>b'</em>) ) ) ) )</td>
+</tr>
+<tr>
+<td align="right">Remove double negation</td>
+<td>∀<em>f</em> (∀<em>f'</em> (∀<em>b</em>        ( (<em>f</em>=<em>f'</em>  ∧  <em>f</em> P <em>b</em>) →  ∀<em>b'</em> ( (<em>b</em>=<em>b'</em>   ∨ ¬<em>f'</em> P <em>b'</em>) ) ) ) )</td>
+</tr>
+<tr>
+<td align="right">Move quantifier up</td>
+<td>∀<em>f</em> (∀<em>f'</em> (∀<em>b</em> (∀<em>b'</em> ( (<em>f</em>=<em>f'</em>  ∧  <em>f</em> P <em>b</em>) →          (<em>b</em>=<em>b'</em>   ∨ ¬<em>f'</em> P <em>b'</em>) ) ) ) )</td>
+</tr>
+<tr>
+<td align="right">Definition of implication</td>
+<td>∀<em>f</em> (∀<em>f'</em> (∀<em>b</em> (∀<em>b'</em> (¬(<em>f</em>=<em>f'</em>  ∧  <em>f</em> P <em>b</em>) ∨          (<em>b</em>=<em>b'</em>   ∨ ¬<em>f'</em> P <em>b'</em>) ) ) ) )</td>
+</tr>
+<tr>
+<td align="right">Distribute negation across conjunction</td>
+<td>∀<em>f</em> (∀<em>f'</em> (∀<em>b</em> (∀<em>b'</em> ( (¬<em>f</em>=<em>f'</em> ∨ ¬<em>f</em> P <em>b</em>) ∨          (<em>b</em>=<em>b'</em>   ∨ ¬<em>f'</em> P <em>b'</em>) ) ) ) )</td>
+</tr>
+<tr>
+<td align="right">Associativity of disjunction</td>
+<td>∀<em>f</em> (∀<em>f'</em> (∀<em>b</em> (∀<em>b'</em> ( (¬<em>f</em> P <em>b</em> ∨ ¬<em>f'</em> P <em>b'</em>) ∨          (¬<em>f</em>=<em>f'</em>   ∨ <em>b</em>=<em>b'</em>) ) ) ) )</td>
+</tr>
+<tr>
+<td align="right">Factor out negation from disjunction</td>
+<td>∀<em>f</em> (∀<em>f'</em> (∀<em>b</em> (∀<em>b'</em> (¬(<em>f</em> P <em>b</em>  ∧ <em>f'</em> P <em>b'</em>)  ∨          (¬<em>f</em>=<em>f'</em>   ∨ <em>b</em>=<em>b'</em>) ) ) ) )</td>
+</tr>
+<tr>
+<td align="right">Definition of implication</td>
+<td>∀<em>f</em> (∀<em>f'</em> (∀<em>b</em> (∀<em>b'</em> ( (<em>f</em> P <em>b</em>  ∧ <em>f'</em> P <em>b'</em>)  →          (¬<em>f</em>=<em>f'</em>   ∨ <em>b</em>=<em>b'</em>) ) ) ) )</td>
+</tr>
+<tr>
+<td align="right">One more step for the fun of it</td>
+<td>∀<em>f</em> (∀<em>f'</em> (∀<em>b</em> (∀<em>b'</em> ( (<em>f</em> P <em>b</em>  ∧ <em>f'</em> P <em>b'</em>)  →          (<em>f</em>=<em>f'</em>   →  <em>b</em>=<em>b'</em>) ) ) ) )</td>
+</tr>
+</tbody>
+</table>
+<p>The double-implication isn't excellent, it might read more clearly if we took a different route from the sixth line:</p>
+<table>
+<thead>
+<tr>
+<th align="right">Justification</th>
+<th>formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">Sixth line from above</td>
+<td>∀<em>f</em> (∀<em>f'</em> (∀<em>b</em> (∀<em>b'</em> (   (¬<em>f</em>=<em>f'</em> ∨ ¬<em>f</em> P <em>b</em>)    ∨ (<em>b</em>=<em>b'</em>   ∨ ¬<em>f'</em> P <em>b'</em>) ) ) ) )</td>
+</tr>
+<tr>
+<td align="right">Associativity of disjunction</td>
+<td>∀<em>f</em> (∀<em>f'</em> (∀<em>b</em> (∀<em>b'</em> ( ( (¬<em>f</em> P <em>b</em> ∨ ¬<em>f'</em> P <em>b'</em>) ∨ ¬<em>f</em>=<em>f'</em> ) ∨ <em>b</em>=<em>b'</em> ) ) ) )</td>
+</tr>
+<tr>
+<td align="right">Factor out negation from disjunction</td>
+<td>∀<em>f</em> (∀<em>f'</em> (∀<em>b</em> (∀<em>b'</em> ( (¬(<em>f</em> P <em>b</em>  ∧ <em>f'</em> P <em>b'</em>)  ∨ ¬<em>f</em>=<em>f'</em> ) ∨ <em>b</em>=<em>b'</em> ) ) ) )</td>
+</tr>
+<tr>
+<td align="right">Factor out negation from disjunction</td>
+<td>∀<em>f</em> (∀<em>f'</em> (∀<em>b</em> (∀<em>b'</em> (¬( (<em>f</em> P <em>b</em>  ∧ <em>f'</em> P <em>b'</em>)  ∧  <em>f</em>=<em>f'</em> ) ∨ <em>b</em>=<em>b'</em> ) ) ) )</td>
+</tr>
+<tr>
+<td align="right">Definition of implication</td>
+<td>∀<em>f</em> (∀<em>f'</em> (∀<em>b</em> (∀<em>b'</em> ( ( (<em>f</em> P <em>b</em>  ∧ <em>f'</em> P <em>b'</em>)  ∧  <em>f</em>=<em>f'</em> ) → <em>b</em>=<em>b'</em> ) ) ) )</td>
+</tr>
+<tr>
+<td align="right">Cull parentheses (not technically allowed)</td>
+<td>∀<em>f</em> ∀<em>f'</em> ∀<em>b</em> ∀<em>b'</em> ( ( <em>f</em> P <em>b</em>  ∧ <em>f'</em> P <em>b'</em>  ∧  <em>f</em>=<em>f'</em> ) → <em>b</em>=<em>b'</em> )</td>
+</tr>
+</tbody>
+</table>
+<p>Returning to our intuitive understanding of the nature of predicates,
+we can see that this doesn't entirely capture the refinement of Relations that we want; P is not necessarily Total. 
+We could express totality as</p>
+<blockquote>
+<p>∀<em>f</em> (∃<em>b</em> (<em>f</em> P <em>b</em>)</p>
+</blockquote>
+<p>but that (combined with the above property) would just limit us to <em>functions</em>;
+predicates must range over truth values. 
+There are a few approaches we could take,
+probably the easiest of which would be to associate variables <em>bT</em> and <em>bF</em> with "boolean true" and "boolean false". 
+Then we could just say</p>
+<blockquote>
+<p>∀<em>f</em> (<em>f</em> P <em>bT</em> ∨ <em>f</em> P <em>bF</em>)</p>
+</blockquote>
+<p>Which suffices to get us a law-of-excluded-middle in this weird logic-inside-of-logic we've built. </p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.01de222e.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
