@@ -33,8 +33,9 @@ In either case, ⟦·⟧₋ can be implemented in terms of lookups and if-then-e
 
 Consider the category _B_ of truth values, and whatever category _S_ of nouns/subjects.
 A single proposition (_e.g._ _p_≜`"Six is prime."`) can be represented as a pair of form 
-(_s_∈_S_, _R_) where _R_ is a [relation](https://en.wikipedia.org/wiki/Binary_relation) over _S_ and _B_
-(_e.g._ (6, _IsPrime_)).
+(_s_∈_S_, _R_) where _R_ is a [relation](https://en.wikipedia.org/wiki/Binary_relation) over _S_ and truth values
+(_e.g._ (6, _IsPrime_)). 
+Rather than writing it as a tuple "(_s_, _R_)", we can instead write it as "_R_(_s_)", which is the normal notation. 
 
 Not any relation _R_⊆_S_⨯_B_ will serve in the representation of a proposition!
 It must be a **predicate**\*, a relation mapping _every_ element of _S_ to exactly one truth value.
@@ -44,25 +45,32 @@ and we deliberately reuse the "¬" symbol to write ¬_F_(_s_)≜(_s_,0)∈_F_.
 <sub>\* Here we consider only _unary_ predicates.
 _Nullary_ predicates are the same as propositions.
 Higher-artiy predicates are also possible.
+Also, it's not clear if predicates really have to be _total_ functions; if you know know please share!
 </sub>
 
 In the context of a relational representation of predicates and propositions,
 we can introduce **quantifiers**.
-(These will be re-introduced when we give predicate logic its own syntax.)
 
 > Universal Quantification:  ∀_s_∈_S_ (_P_(_s_)) ≜ {(_s_,1) | _s_∈_S_} ⊆ _P_  
 > Existential Quantification: ∃_s_∈_S_ (_P_(_s_)) ≜ ∅ ≠ {(_s_,1) | _s_∈_S_} ∩ _P_
 
-Typically the element-hood restriction on _s_ is omitted,
-and _S_ is assumed to be the domain of _P_.
+Typically the element-hood restriction on _s_ is omitted, and _S_ is assumed to be the domain of _P_,
+but quantification over subsets of the domain is fine. 
+In particular, notice that ∀_s_∈∅ (_P_(_s_)) is a tautology and ∃_s_∈∅ (_P_(_s_)) is a contradiction, regardless of _P_.
 
 
 ## Predicate Logic Syntax:
 
+In the prior section we introduced the notions and notations of predicates and quantifiers;
+here we introduce a formal syntax for them. 
+While in the prior section we gave predicates meaning as relations, and gave quantifiers meaning in terms of set-theory,
+_here we will treat them as pure symbols_.
+They'll get (possibly contextual) meanings again later when we define a semantics.
+
 Predicates compose into formula just like propositions do. 
 This is what that looks like in BNF:
 
-| patterns | forms    | meaning |
+| patterns | forms    | notes |
 |----------|:---------|:--------|
 | _x_      |          | Variables (from some set of identifiers) |
 | _P_      |          | Predicates (from some set of identifiers) |
@@ -113,7 +121,7 @@ While we intuitively understand it to mean "equality", that idea is _not_ encode
 Similarly, I here use the un-italicized P to refer to a _binary_ predicate "is a predicate", who's right-hand argument is a truth value,
 but neither the semantics of P nor the idea of a truth value is encoded in the syntax.
 
-| patterns | forms    | meaning |
+| patterns | forms    | notes |
 |----------|:---------|:--------|
 | _x_      | f ⏐ f' ⏐ b ⏐ b'         | Variables (that we'll use) |
 | _P_      | P ⏐ =                   | Predicates (that we'll use) |
