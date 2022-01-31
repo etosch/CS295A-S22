@@ -13,21 +13,22 @@ For the unit on logic you may also want to consult:
 * _Logic in Computer Science_, Huth and Ryan
 * _Logic for Computer Scientists_, Schoening
 
-Huth and Ryan is an excellent text for temporal and epistemic logics, which we will touch on in Unit 3 (agent-based reasoning).
+Huth and Ryan is an excellent introductory text for temporal and epistemic logics, which we will touch on in Unit 3 (agent-based reasoning).
+
 
 | Date  | Topic  | Form  |  Deadlines & Notes |
 |---:|---|---|---|
 | Wed, Jan 19 | Intro: What is AI? | [Lecture](lectures/Lec1_Intro_AI.pdf) | |
 | Fri, Jan 21 | Knowledge Representation | [Lecture](lectures/Lec2_Knowledge_Representation.pdf) | R&N: 12.1, 12.2<br/>[Set notation cheatsheet](https://www.maths.usyd.edu.au/u/UG/JM/MATH1901/r/PDF/cheat-sheet.pdf) |
 | Mon, Jan 24 | Propositional Logic | [Lecture](lectures/Lec3____Propositional_Logic.pdf) | **Add Deadline**<br/>R&N: 7.3  |
-| Wed, Jan 26 | First Order Logic | [Lecture](lectures/Lec4____First_Order_Propositional_Logic.pdf) | **Theory Assignment 1 out** <br/> R&N 8.2 |
-| Fri, Jan 28 | Logical Inference  | Lecture | **Programming Assignment 1 out** |
+| Wed, Jan 26 | First Order (Predicate) Logic | [Lecture](lectures/Lec4____First_Order_Predicate_Logic.pdf) | **Theory Assignment 1 out** <br/> R&N 8.2 |
+| Fri, Jan 28 | Logical Inference  | Lecture | **[Programming Assignment 1](assignments/1/programming_assignment_1.html) out** |
 | Mon, Jan 31 | Applications of Logic in AI | Lecture | |
 | Wed, Feb 2  | Logic Programming | Lecture | **Theory Assignment 1 due (soft)**   |
 | Fri, Feb 4  | Application: Planning | Live Coding | **Drop Deadline**<br/>**Theory Assignment 1 due (hard)** |
-| Mon, Feb 7  | Exam 1: Logic | Exam | **Programming Assignment 1 due (soft)** |
+| Mon, Feb 7  | Exam 1: Logic | Exam | |
 | Wed, Feb 9  | Graph Planning and Intro to Search | Lecture | |
-| Fri, Feb 11 | States and Probabilistic Transitions | Lecture ||
+| Fri, Feb 11 | States and Probabilistic Transitions | Lecture | **Programming Assignment 1 due (soft)** |
 | Mon, Feb 14 | Background: Discrete Probability Theory | Lecture ||
 | Wed, Feb 16 | Naive (Uninformed) Search | Lecture || 
 | Fri, Feb 18 | Heuristic (Informed) Search | Lecture || 
