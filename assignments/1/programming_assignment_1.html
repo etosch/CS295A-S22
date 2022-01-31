@@ -327,6 +327,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#how-to-submit" class="md-nav__link">
+    How to submit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#warning" class="md-nav__link">
     Warning
   </a>
@@ -463,6 +470,16 @@ The goal is to iterate over the set, combining clauses in this manner until we d
 <h3 id="create-test-data-and-compare">Create test data and compare</h3>
 <p>Create 10 test unsatisfiable formulas and compare how long it takes to show that they are unsatisfiable against the built-in <code>interpret</code> function. You may compare according to a metric of your choosing, but you must justify it. For example, you may wish to report on average wall-clock time over some <span class="arithmatex">\(n\)</span> trials, or you may wish to compare the size of the resolution set vs. number inputs tested. </p>
 <p>Show your analyses in the Jupyter notebook. If you create auxiliary functions for e.g., generating test data, put that in <code>programming_assignment_1.py</code>.</p>
+<h3 id="how-to-submit">How to submit</h3>
+<p><code>gzip</code> and archive the following files:</p>
+<ul>
+<li><a href="logic.py"><code>logic.py</code></a> (even if you have not changed it!)</li>
+<li><a href="logic.ipynb"><code>logic.ipynb</code></a></li>
+<li><a href="programming_assignment_1.py"><code>programming_assignment_1.py</code></a></li>
+</ul>
+<p>into a file with the name <code>p1_&lt;your_last_name&gt;.tgz</code>. So, if I were submitting this homework and stored the files in a local directory called <code>hw1</code>, I would call the followin command from one directory above <code>hw1</code>:</p>
+<p><code>`
+tar -czvf p1_tosch.tgz src/assignments/1/*</code></p>
 <h3 id="warning">Warning</h3>
 <p>I strongly recommend doing any development in the Jupyter notebook. Because notebooks are stateful and because you can execute them out of order, they can lead to a lot of headaches. Instead, view them as demonstrations of your work and note that we will be grading the homework assignments by interacting with the notebook. </p>
 <h2 id="using-existing-tools">Using existing tools</h2>
