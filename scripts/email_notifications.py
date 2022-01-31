@@ -41,7 +41,7 @@ with open(sfile, "r") as f:
     if len(lines) > 0:
         last_lecture_emailed = dateparse(lines[-1])
 
-email_text = """From: Emma.Tosch
+email_text = """From: Emma.Tosch@uvm.edu
 To: test - Artificial Intelligence _202201-NE-Crosslisted_ CS295A_CS395D <43f7098c.uvmoffice.onmicrosoft.com@amer.teams.ms>
 Subject: Blogging for Lecture ({lecture_date})
 

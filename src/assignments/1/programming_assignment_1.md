@@ -4,6 +4,13 @@ Undergraduates will [implement some of the algorithms](#implementing-algorithms)
 
 ## Implementing algorithms
 
+Relevant files:
+
+* [`logic.py`](logic.py) 
+* [`logic.ipynb`](logic.ipynb)
+* [`programming_assignment_1.py`](programming_assignment_1.py)
+
+
 For this assignment, you will implement the resolution algorithm for first order logic over a mini Prolog-like langauge. Prolog is a logic programming language that has a long history of use in AI. Prolog is  _declarative_, i.e., you tell it _what_ you want it to do, not _how_ to do it. The mini language is written as a Python library, so you don't need to do any additional parsing or learn Prolog syntax. 
 
 At present, the core language supports user-defined predicates, but not functions or constants. It supports free variables. 
@@ -143,6 +150,19 @@ Create 10 test unsatisfiable formulas and compare how long it takes to show that
 
 Show your analyses in the Jupyter notebook. If you create auxiliary functions for e.g., generating test data, put that in `programming_assignment_1.py`.
 
+### How to submit
+
+`gzip` and archive the following files:
+
+* [`logic.py`](logic.py) (even if you have not changed it!)
+* [`logic.ipynb`](logic.ipynb)
+* [`programming_assignment_1.py`](programming_assignment_1.py)
+
+into a file with the name `p1_<your_last_name>.tgz`. So, if I were submitting this homework and stored the files in a local directory called `hw1`, I would call the followin command from one directory above `hw1`:
+
+```
+tar -czvf p1_tosch.tgz src/assignments/1/*
+``
 
 ### Warning
 I strongly recommend doing any development in the Jupyter notebook. Because notebooks are stateful and because you can execute them out of order, they can lead to a lot of headaches. Instead, view them as demonstrations of your work and note that we will be grading the homework assignments by interacting with the notebook. 
