@@ -64,7 +64,7 @@ if last_lecture_emailed is None or last_lecture_emailed.strftime("%a, %b %d").st
         f.write(email_text)
 
     with open(os.path.expanduser("~") + os.path.sep + ".send_email.sh", "w") as f:
-        f.write("sendmail {} < .email.txt".format(args.email))
+        f.write("/usr/sbin/sendmail {} < .email.txt".format(args.email))
 
     # write the date to .schedule
     with open(sfile, "a") as f:
@@ -72,4 +72,4 @@ if last_lecture_emailed is None or last_lecture_emailed.strftime("%a, %b %d").st
 else:
     print("B")
     with open(".send_email.sh", "w") as f:
-        f.write("sendmail etosch@uvm.edu < .email.txt")
+        f.write("/usr/sbin/sendmail etosch@uvm.edu < .email.txt")
