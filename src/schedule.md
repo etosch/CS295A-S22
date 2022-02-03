@@ -23,9 +23,9 @@ Huth and Ryan is an excellent introductory text for temporal and epistemic logic
 | Mon, Jan 24 | Propositional Logic | [Lecture](lectures/Lec3____Propositional_Logic.pdf) | **Add Deadline**<br/>R&N: 7.3  |
 | Wed, Jan 26 | First Order (Predicate) Logic | [Lecture](lectures/Lec4____First_Order_Predicate_Logic.pdf) | **Theory Assignment 1 out** <br/> R&N 8.2 |
 | Fri, Jan 28 | Logical Inference I | [Lecture](lectures/Lec5____Logical_Inference.pdf) |  |
-| Mon, Jan 31 | Logical Inference II | Lecture | _No Teams broadcast today_ <br/> **[Programming Assignment 1](assignments/1/programming_assignment_1.html) out**|
-| Wed, Feb 2  | Applications of Logic in AI | Lecture | **Theory Assignment 1 due (soft)**   |
-| Fri, Feb 4  | Application: Law and Logic Programming | Live Coding | **Drop Deadline**<br/>**Theory Assignment 1 due (hard)** |
+| Mon, Jan 31 | Review of Logical Inference | Michael Q&A | _No Teams broadcast today_ <br/> **[Programming Assignment 1](assignments/1/programming_assignment_1.html) out**|
+| Wed, Feb 2  | Logical Inference II and Resolution | [Videos](https://youtube.com/playlist?list=PLy1dxKpUCh9iYTZir_k_ZpeTlDJW9A9bv) | **Theory Assignment 1 due (soft)**   |
+| Fri, Feb 4  | Application: Law and Logic Programming | Lecture | **Drop Deadline**<br/>**Theory Assignment 1 due (hard)** |
 | Mon, Feb 7  | Exam 1: Logic | Exam | |
 | Wed, Feb 9  | Graph Planning and Intro to Search | Lecture | |
 | Fri, Feb 11 | States and Probabilistic Transitions | Lecture | **Programming Assignment 1 due (soft)** |
