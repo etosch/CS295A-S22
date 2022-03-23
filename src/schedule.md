@@ -15,6 +15,12 @@ For the unit on logic you may also want to consult:
 
 Huth and Ryan is an excellent introductory text for temporal and epistemic logics, which we will touch on in Unit 3 (agent-based reasoning).
 
+## References for Unit 3 (Agents: Belief and Time)
+
+* _Advanced Data Analysis from an Elementary Point of View_, Part III, Shalizi, [pdf](https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/ADAfaEPoV.pdf)
+* _Logic in Computer Science_, Huth and Ryan
+
+
 
 | Date  | Topic  | Form  |  Deadlines & Notes |
 |---:|---|---|---|
@@ -29,28 +35,28 @@ Huth and Ryan is an excellent introductory text for temporal and epistemic logic
 | Mon, Feb 7  | Proofs as Planning and Intro to Search | [Lecture](lectures/Lec8_Planning_Intro_Search.pdf) | R&N 10.1, 10.2 |
 | Wed, Feb 9  | Exam 1: Logic | Exam | |
 | Fri, Feb 11 | Background: Discrete Probability Theory | Lecture | **Programming Assignment 1 due (soft)** |
-| Mon, Feb 14 | States and Probabilistic Transitions | Lecture ||
-| Wed, Feb 16 | Naive (Uninformed) Search | Lecture || 
-| Fri, Feb 18 | Heuristic (Informed) Search | Lecture || 
+| Mon, Feb 14 | **CANCELLED** |  ||
+| Wed, Feb 16 | **CANCELLED** |  || 
+| Fri, Feb 18 |  | Lecture (Michael) || 
 | Mon, Feb 21 | **President's Day** | **No Class** | |
-| Wed, Feb 23 | Partial Observability | Lecture || 
-| Fri, Feb 25 | Adversarial Search | Lecture || 
-| Mon, Feb 28 | Search + Logic: Constraint Satisfaction | Lecture || 
-| Wed, Mar 2  | Application: Probabilistic Programming | Live Coding ||
-| Fri, Mar 4  | Exam 2: Search | Exam || 
+| Wed, Feb 23 | | Lecture (Michael) || 
+| Fri, Feb 25 |  | Lecture (Michael) || 
+| Mon, Feb 28 |  | Lecture (Michael)|| 
+| Wed, Mar 2  |  | Lecture (Michael) ||
+| Fri, Mar 4  |  |  Lecture (Michael) || 
 | Mon, Mar 7  | **Spring Recess** | **No Class** ||
 | Wed, Mar 9  | **Spring Recess** | **No Class** ||
 | Fri, Mar 11 | **Spring Recess** | **No Class** ||
-| Mon, Mar 14 | Agents, Tasks, Environments | Lecture || 
-| Wed, Mar 16 | Modal Logic for Representing Belief | Lecture ||
-| Fri, Mar 18 | Bayes Nets for Representing Belief | Lecture ||
-| Mon, Mar 21 | Temporal Logic for Representing Transitions | Lecture ||
-| Wed, Mar 23 | Markov Chains for Representing Transitions | Lecture ||
-| Fri, Mar 25 | Elementary Game Theory | Lecture ||
-| Mon, Mar 28 | From Planning to Causal Reasoning | Lecture ||
-| Wed, Mar 30 | Causal Inference | Lecture ||
-| Fri, Apr 1  | Perception, Measurement, and Intervention | Lecture ||
-| Mon, Apr 4  | Exam 3: Agent-based Reasoning | Exam | **Last day to Withdraw** |
+| Mon, Mar 14 | | Lecture (Michael)  ||
+| Wed, Mar 16 | Uncertainty in States | [Lecture](lectures/Lec15_probabilistic_states.pdf) | R&N 12.1-4 | 
+| Fri, Mar 18 | Queries and Partial Observability | [Lecture](lectures/Lec16_queries.pdf) | R&N 13.1-2 <br/> _We briefly discussed what a naive causal structure learning algorithm would look like. For a full treatment of constraint-based causal structure learning, see [Shalizi Ch. 25](https://www.stat.cmu.edu/~cshalizi/uADA/12/lectures/ch25.pdf)_|
+| Mon, Mar 21 | Causal Graphical Models | [Lecture](lectures/Lec17_CGMs.pdf) | [Notebook exercises](code/cgms.html)<br/>[Actual notebook](code/cgms.ipynb) |
+| Wed, Mar 23 | Modal Logics for Knowledge and Belief | [Lecture](lectures/Lec18_epistemic_logic.pdf) | [Modal Logic Playground](https://rkirsling.github.io/modallogic/) |
+| Fri, Mar 25 | Using Epistemic Logic | Lecture | ||
+| Mon, Mar 28 | Temporal Logic for Representing Transitions | Lecture ||
+| Wed, Mar 30 | Computing with Epistemic and Temporal Logics | Lecture ||
+| Fri, Mar 1  | Markov Chains for Representing Transitions | Lecture | R&N 14, 17| 
+| Mon, Apr 4  | Exam 3: Agent-based Reasoning | Exam | **Last day to Withdraw** <br/> _The exam will probably be bumped to later in the week, to give more time for assignments, in which case Monday will begin the next unit._ |
 | Wed, Apr 6  | Learning Programs | Lecture ||
 | Fri, Apr 8  | Genetic Algorithms | Lecture ||
 | Mon, Apr 11 | Genetic Programming | Lecture ||
