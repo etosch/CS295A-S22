@@ -1,0 +1,390 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Public Course Website for CS295A/CS395D S2022 at Universtiy of Vermont">
+      
+      
+        <meta name="author" content="Emma Tosch (etosch@uvm.edu)">
+      
+      
+        <link rel="canonical" href="https://uvm.edu/~etosch/CS295A-S22/blog/01_24_Propositional_Logic.html">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.10">
+    
+    
+      
+        <title>01 24 Propositional Logic - Artificial Intelligence</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.d6be258b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Artificial Intelligence" class="md-header__button md-logo" aria-label="Artificial Intelligence" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Artificial Intelligence
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              01 24 Propositional Logic
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/uvm-maple/CS295A-S22/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Artificial Intelligence" class="md-nav__button md-logo" aria-label="Artificial Intelligence" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Artificial Intelligence
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/uvm-maple/CS295A-S22/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        CS 295A/395D: Artificial Intelligence
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../syllabus.html" class="md-nav__link">
+        Syllabus
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedule.html" class="md-nav__link">
+        Schedule
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blogging_guidelines.html" class="md-nav__link">
+        Blogging Guidelines
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog.html" class="md-nav__link">
+        Course Blog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../covid_policies.html" class="md-nav__link">
+        Covid Policies
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UVM_resources.html" class="md-nav__link">
+        UVM Resources
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/uvm-maple/CS295A-S22/edit/master/docs/blog/01_24_Propositional_Logic.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+  <h1>01 24 Propositional Logic</h1>
+
+<p>Setting the fundamentals for the rest of the semester - Monday’s class of CS295 Artificial Intelligence jumped quickly into some important concepts: 
+Ontologies, propositions, knowledge, basis, connectives, and much more. This blog post, written by Matt Dierker and Preston Hunter, will aim to give you a quick, narrative-driven,
+ recap of the content of class. If you have any questions or modifications that you would like added to this blog post - 
+ please don’t hesitate to reach out to mdierker@uvm.edu or preston.hunter@uvm.edu.</p>
+<p>The first concept that professor Tosch covered was that of of propositions and their inherit relation to the compositions of knowledge bases. 
+Propositions, as defined within the class notes, are a singular, indivisible unit of data. For example: j ≜ “Matt is the roommate of Preston” or 
+k ≜ “Preston dislikes using git”. Each of these sentences, similar to that of a variable definition within our code base, defines something that is inherently true. 
+These propositions compromise the basis of a knowledge basis - is a form that aims to store our information. While in advanced AI, knowledge bases can become extremely large, 
+attempting to capture large amounts of information for a program to iterate over, for our purposes this early on in the class we can consider it to be more similar 
+to a list or dictionary. When we choose to access this stored data, we do so by either replacing propositions with their definitions or checking definitions against 
+what we know (and have stored). Furthermore, for our classes purposed, we will abbreviate knowledge base as KB, simga/σ as a set of propositions, 
+and our aforementioned ≜ as a  function to compare propositions (which returns a boolean). For more information on knowledge bases (KB) including relevant industry 
+information, please follow the following link:
+https://www.kmslh.com/blog/knowledge-base-in-ai-what-is-it-and-why-do-you-need-one/</p>
+<p>Connectives are what join propositions together into formulas, which themselves are inductively defined.  The two most basic connectives, 
+upon which all others can be defined, are negation and disjunction (or in other words OR). Other commonly used ones are conjunction (AND), and implication (-&gt;). 
+For formulas F and G (F and G are elements of the set of propositions called atomic formulas), the below are also formulas
+Negation: -F        -Conjunction: F and G
+Disjunction: F or G     - Implication: F-&gt;G</p>
+<p>All propositions have a truth value of 0 or 1, and the function/assignment that maps from the propositions to their truth values {0,1} 
+is A (Fancy A when written). Formulas are evaluated to truth values by assigning all of the atomic propositions their respective truth values, 
+and then evaluating the effect/truth value of connectives on the propositions/truth values they connect.  </p>
+<p>We can evaluate a formula in this manner, and we can make this simpler or more organized by breaking a formula down into subexpressions. E.G. 
+P1 OR(P1 OR P2) has subexpressions (P1 OR P2) and P1</p>
+<p>A helpful tool are truth tables, which for an arbitrary number of formulas, the truth value for every possible combination of truth values for the Formulas. 
+A very helpful one is the one for formulas F and G, and the values for the connectives highlighted earlier</p>
+<p>F|G|F and G| F or G| not F| F imply G
+0 0|  0    |  0    |  1   |  1
+0 1|  0    |  1    |  1   |  1
+1 0|  0    |  1    |  0   |  0
+1 1|  1    |  1    |  0   |  1</p>
+<p>Sometimes we may come across a formula F (composed of other propositions by connectives) which always evaluates to 0 or 1 for its truth value, 
+no matter the truth values for formulas that compose F. In this case F can be replaced with T if it is always 1 or ⊥ if it is always 0. 
+These two special values/formulas we can add to our list of atomic formulas. </p>
+<p>The next thing that we defined was the conceptual idea of equivalence - meaning  the comparing of two formulas to determine if they are equivalent. 
+In this concept, the formula is considered equivalent if and only if the return the same truth value for both the sides of formula. It is important to note that a 
+suitable assignment must contain truth values for all of the included propositions. Professor Tosch notes that knowing how to compare these formulas will be imperative
+to the rest of the course. For practice information, please review Wednesday’s (1/26) class notes and the iclicker equation of the day for today (1/24). </p>
+<p>To build upon the concept of equivalence within Artificial Intelligence, we should note that there are some scenarios that are used frequently enough where the they 
+now have their own names. The first of these scenarios is known as a model, in which all possible values for a variable (A) is suitable or equal to 1 for another variable(F),
+then we can say that A models F. This form is written as A |= F. Conversely, when there are not suitable assignments in which A |= F =1, then we would redefine this as 
+F being unsatisfiable or a contradiction to A. If there is at least one instance in which A models F, then it’s listed as satisfiable.</p>
+<p>Another concept that Professor Tosch discussed was that of Boolean Satisfiability, alternatively abbreviated as SAT. In SAT - we aim to find an assignment in 
+which X is [[Y]]X = 1. In order to achieve SAT, three important things must occur. Firstly, we must Enumerate all possible assignments for Y, 
+for all real numbers of X (X1, X2,X3…Xn). Additionally, for all values of Xi, ∈ all real numbers of X, when the model is satisfied, then return Xi. 
+When there is not such assignments that exist, we must return unsatisfied or UNSAT. We can continue to build upon this concept in NP, specifically canonical NP-complete problems.<br />
+When we define NP-complete - we are referencing problems in which we must use the same amount as computationally heavy NP problems, but not any more. 
+These problems in particular can be checked in polynomial time. However, finding solutions may need to be found in exponential time - although the time may be reduced 
+depending on use case.</p>
+<p>Conjunctive normal form (CNF) is a way of rewriting formulas systematically suh that they are easier to perform the boolean satisfiability problem on. 
+It involves rewriting all F-&gt;G as -F or G, then pushing all negations to atomic formulas and applying the distributive laws. Horn Formulas are in CNF and each clause 
+has at most one positive atomic formula. Horn formulas have an efficient algorithm to solve the SAT problem for (Horn-SAT). </p>
+<p>One of the final concepts that we discussed in class was a comparison between complexity, algorithm, and Artificial Intelligence. 
+Oftentimes we consider whether these types of problems would fall into the realm of artificial intelligence - and surprisingly, these are exactly the type of problems AI 
+aims to solve. Firstly, when approaching these problems, it’s beneficial to categorize these problems into equivalence classes. 
+Secondly, when approaching this from an algorithm perspective, we must aim to find a solution to model a problem instance that we will aim to recreate. 
+Finally, we must focus that AI is typically aiming to work through complex boolean logic, thus returning primarily true/false results. 
+The goal is to be able to build code that replicates common problems that we will encounter in the realm of work. Important to note that slower results and incorrect results 
+are acceptable.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e3b2bf44.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
