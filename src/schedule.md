@@ -52,7 +52,7 @@ Huth and Ryan is an excellent introductory text for temporal and epistemic logic
 | Fri, Mar 18 | Queries and Partial Observability | [Lecture](lectures/Lec16_queries.pdf) | R&N 13.1-2 <br/> _We briefly discussed what a naive causal structure learning algorithm would look like. For a full treatment of constraint-based causal structure learning, see [Shalizi Ch. 25](https://www.stat.cmu.edu/~cshalizi/uADA/12/lectures/ch25.pdf)_|
 | Mon, Mar 21 | Causal Graphical Models | [Lecture](lectures/Lec17_CGMs.pdf) | [Notebook exercises](code/cgms.html)<br/>[Actual notebook](code/cgms.ipynb) |
 | Wed, Mar 23 | Modal Logics for Knowledge and Belief | [Lecture](lectures/Lec18_epistemic_logic.pdf) | [Modal Logic Playground](https://rkirsling.github.io/modallogic/) |
-| Fri, Mar 25 | Using Epistemic Logic | Lecture | ||
+| Fri, Mar 25 | Representing agent belief with $KT45^n$  | [Lecture](lectures/Lec19_epistemic_logic2.pdf)<br/>[An Introduction to Logics of Knowledge and Belief](https://arxiv.org/pdf/1503.00806.pdf) | ||
 | Mon, Mar 28 | Temporal Logic for Representing Transitions | Lecture ||
 | Wed, Mar 30 | Computing with Epistemic and Temporal Logics | Lecture ||
 | Fri, Mar 1  | Markov Chains for Representing Transitions | Lecture | R&N 14, 17| 
