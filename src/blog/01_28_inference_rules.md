@@ -1,4 +1,4 @@
-# Inference rules
+# Inference rules for disjunction
 _Resources and clarifications_
 
 Today in class, we discussed inference rules in natural deduction. There are some excellent resources out there but this [chart can be helpful](inference_rules.jpg). The sections from the Lean theorem prover book on natural deduction for [propositional](https://leanprover.github.io/logic_and_proof/natural_deduction_for_propositional_logic.html) and [first-order predicate](https://leanprover.github.io/logic_and_proof/natural_deduction_for_first_order_logic.html) appear clear and useful, but I have not investigated them closely.

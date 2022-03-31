@@ -1,3 +1,4 @@
+# More Logical Inference 
 
 Two important qualifiers to learn: Universal and Existential. Universal in the context of predicates has symbol ∀ and means for all y 
 that the Predicate P(y) evaluates to true. Existential has a symbol and means there exists a where the predicate P(y) evaluates to true.

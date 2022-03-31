@@ -1,5 +1,5 @@
 
-# Introduction to Predicates
+# Introduction to Propositions and Predicates
 
 
 ## Recap of Propositions:

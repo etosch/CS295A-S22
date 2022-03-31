@@ -1,3 +1,4 @@
+# Propositional Logic
 Setting the fundamentals for the rest of the semester - Monday’s class of CS295 Artificial Intelligence jumped quickly into some important concepts: 
 Ontologies, propositions, knowledge, basis, connectives, and much more. This blog post, written by Matt Dierker and Preston Hunter, will aim to give you a quick, narrative-driven,
  recap of the content of class. If you have any questions or modifications that you would like added to this blog post - 
