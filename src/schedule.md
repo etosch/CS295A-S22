@@ -37,17 +37,17 @@ Huth and Ryan is an excellent introductory text for temporal and epistemic logic
 | Fri, Feb 11 | Background: Discrete Probability Theory | Lecture | **Programming Assignment 1 due (soft)** |
 | Mon, Feb 14 | **CANCELLED** |  ||
 | Wed, Feb 16 | **CANCELLED** |  || 
-| Fri, Feb 18 |  | Lecture (Michael) || 
+| Fri, Feb 18 | Search Agents | [Lecture (Michael)](lectures/AI_M_Lecture1.pdf) | R&N 2.1-4| 
 | Mon, Feb 21 | **President's Day** | **No Class** | |
-| Wed, Feb 23 | | Lecture (Michael) || 
-| Fri, Feb 25 |  | Lecture (Michael) || 
-| Mon, Feb 28 |  | Lecture (Michael)|| 
-| Wed, Mar 2  |  | Lecture (Michael) ||
-| Fri, Mar 4  |  |  Lecture (Michael) || 
+| Wed, Feb 23 | Uninformed Search | [Lecture (Michael)](lectures/AI_M_Lecture2.pdf) | R&N 3.1-4 | 
+| Fri, Feb 25 | In-Class Activity: Search | Lecture (Michael) || 
+| Mon, Feb 28 | A* and Adversarial Search | [Lecture (Michael)](lectures/AI_M_Lecture4.pdf)| R&N 3.5-6, 5.1-3| 
+| Wed, Mar 2  | Constraint Satisfaction Problems | [Lecture (Michael)](lectures/AI_M_Lecture5.pdf) | R&N 6.1-5 |
+| Fri, Mar 4  | In-Class Actibity: CSP |  Lecture (Michael) || 
 | Mon, Mar 7  | **Spring Recess** | **No Class** ||
 | Wed, Mar 9  | **Spring Recess** | **No Class** ||
 | Fri, Mar 11 | **Spring Recess** | **No Class** ||
-| Mon, Mar 14 | | Lecture (Michael)  ||
+| Mon, Mar 14 | AI Security Topics | Lecture (Michael)  ||
 | Wed, Mar 16 | Uncertainty in States | [Lecture](lectures/Lec15_probabilistic_states.pdf) | R&N 12.1-4 | 
 | Fri, Mar 18 | Queries and Partial Observability | [Lecture](lectures/Lec16_queries.pdf) | R&N 13.1-2 <br/> _We briefly discussed what a naive causal structure learning algorithm would look like. For a full treatment of constraint-based causal structure learning, see [Shalizi Ch. 25](https://www.stat.cmu.edu/~cshalizi/uADA/12/lectures/ch25.pdf)_|
 | Mon, Mar 21 | Causal Graphical Models | [Lecture](lectures/Lec17_CGMs.pdf) | [Notebook exercises](code/cgms.html)<br/>[Actual notebook](code/cgms.ipynb) |
