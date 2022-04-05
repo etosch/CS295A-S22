@@ -70,6 +70,7 @@ Looking at other models, we can formalize with epistemic knowledge.  An example 
 WWR
 WRW
 RWW
+WRR
 RWR
 RRW
 RRR
