@@ -8,9 +8,9 @@ Looking at design patterns in artificial intelligence and machine learning, most
 In order to find a player's chance of taking a particular action, we use the following "recipe":
 
 1. Compute Expression for E[P|Q=q] using P's utility function
-  1. This will be over all possible choices for P
-  2. The pmf comes from P's choice
-  3. Q's choice is fixed
+    1. This will be over all possible choices for P
+    2. The pmf comes from P's choice
+    3. Q's choice is fixed
 2. Compute expression for other values of Q=q
 3. Set expressions equal to each other and solve for p.
 
