@@ -16,6 +16,8 @@ In order to find a player's chance of taking a particular action, we use the fol
 
 ### An Example of Game Theory
 ![Example Chart](example-chart.png "Example Chart")
+
+
 EU[E|O=1] = 2p + (-3)(1-p)
 = 2p - 3 + 3p
 = 5p - 3
@@ -30,7 +32,11 @@ Set equal EU[E|O=1] = EU[E|O=2]
 p = 7/12
 
 Can also be looked at as min{EU[E|O=1],EU[E|O=2]}
+
+
 ![Example Graph](example-graph.png "Example Chart")
+
+
 d = |EU[E|O=1] - EU[E|O=2]|
 0 = |12p - 7|
 0 = 12p - 7       0 = -12p + 7
@@ -52,6 +58,7 @@ p = 7/12
 Agents here are all "rational": So long as they have complete knowledge of the payoff matrix, they will seek to maximize their utility.  The assumption we make is that all players are treating the game in a decision-theoretic manner.  Given that agent's actions are made simultaneously and without coordination or communication between the agents, we can treat the other agent's (Player Q's) actions as random state.  Then each state node encapsulates all the uncertainty about those actions, so we can use game theory to determine the state distribution.
 
 ![Decision Theory Model](decision-theory-model.png "Decision Theory Model")
+
 
 ## Minimax theorem in Game Theory
 For planning with logic, we search through the change state a logical inference over limited language while enforcing constraints.  We used heuristics and cost, with heuristics being estimates (used when it's alright to be slightly sub-optimal) while costs assign value to the state (used for ordering).  In the past, we used this deterministically while with game theory it is probabilistic.  In game theory, there is a choice in objective between minimizing max loss and maximizing minimum gain.  To solve this, we assume a zero sum game where a player maximizing their min gain is equal to minimizing the max loss.  
