@@ -25,7 +25,7 @@ Huth and Ryan is an excellent introductory text for temporal and epistemic logic
 | Date  | Topic  | Form  |  Deadlines & Notes |
 |---:|---|---|---|
 | Wed, Jan 19 | Intro: What is AI? | [Lecture](lectures/Lec1_Intro_AI.pdf) | |
-| Fri, Jan 21 | Knowledge Representation | [Lecture](lectures/Lec2_Knowledge_Representation.pdf) | R&N: 12.1, 12.2<br/>[Set notation cheatsheet](https://www.maths.usyd.edu.au/u/UG/JM/MATH1901/r/PDF/cheat-sheet.pdf) |
+| Fri, Jan 21 | Knowledge Representation | [Lecture](lectures/Lec2_Knowledge_Representation.pdf) | R&N: 12.1, 12.2<br/>[Set notation cheatsheet](https://www.maths.usyd.edu.au/u/UG/JM/MATH1901/r/PDF/cheat-sheet.pdf)<br/>[NSF Workshop: Research Challenges and Opportunitites in KR](https://corescholar.libraries.wright.edu/cgi/viewcontent.cgi?article=1217&context=cse) |
 | Mon, Jan 24 | Propositional Logic | [Lecture](lectures/Lec3____Propositional_Logic.pdf) | **Add Deadline**<br/>R&N: 7.3  |
 | Wed, Jan 26 | First Order (Predicate) Logic | [Lecture](lectures/Lec4____First_Order_Predicate_Logic.pdf) | **Theory Assignment 1 out** <br/> R&N 8.2 |
 | Fri, Jan 28 | Logical Inference I | [Lecture](lectures/Lec5____Logical_Inference.pdf) | R&N 7.5 |
@@ -51,24 +51,25 @@ Huth and Ryan is an excellent introductory text for temporal and epistemic logic
 | Wed, Mar 16 | Uncertainty in States | [Lecture](lectures/Lec15_probabilistic_states.pdf) | R&N 12.1-4 | 
 | Fri, Mar 18 | Queries and Partial Observability | [Lecture](lectures/Lec16_queries.pdf) | R&N 13.1-2 <br/> _We briefly discussed what a naive causal structure learning algorithm would look like. For a full treatment of constraint-based causal structure learning, see [Shalizi Ch. 25](https://www.stat.cmu.edu/~cshalizi/uADA/12/lectures/ch25.pdf)_|
 | Mon, Mar 21 | Causal Graphical Models | [Lecture](lectures/Lec17_CGMs.pdf) | [Notebook exercises](code/cgms.html)<br/>[Actual notebook](code/cgms.ipynb) |
-| Wed, Mar 23 | Modal Logics for Knowledge and Belief | [Lecture](lectures/Lec18_epistemic_logic.pdf) | [Modal Logic Playground](https://rkirsling.github.io/modallogic/) |
-| Fri, Mar 25 | Representing agent belief with $KT45^n$  | [Lecture](lectures/Lec19_epistemic_logic2.pdf)<br/>[An Introduction to Logics of Knowledge and Belief](https://arxiv.org/pdf/1503.00806.pdf) | ||
-| Mon, Mar 28 | Temporal Logic for Representing Transitions | Lecture ||
-| Wed, Mar 30 | Computing with Epistemic and Temporal Logics | Lecture ||
-| Fri, Mar 1  | Markov Chains for Representing Transitions | Lecture | R&N 14, 17| 
-| Mon, Apr 4  | Exam 3: Agent-based Reasoning | Exam | **Last day to Withdraw** <br/> _The exam will probably be bumped to later in the week, to give more time for assignments, in which case Monday will begin the next unit._ |
-| Wed, Apr 6  | Learning Programs | Lecture ||
-| Fri, Apr 8  | Genetic Algorithms | Lecture ||
-| Mon, Apr 11 | Genetic Programming | Lecture ||
-| Wed, Apr 13 | Program Synthesis | Lecture ||
-| Fri, Apr 15 | Counter-example Guided Inductive Search | Lecture ||
-| Mon, Apr 18 | Type-directed Synthesis | Lecture ||
-| Wed, Apr 20 | Application: TBA | Live Coding ||
-| Fri, Apr 22 | Exam 4: Learning Programs | Exam | **Honor's Day** |
-| Mon, Apr 25 | What is Machine Learning? | Lecture | 
-| Wed, Apr 27 | Supervised Learning | Lecture |
-| Fri, Apr 29 | Unsupervised Learning | Lecture |
-| Mon, May 2  | Reinforcement Learning | Lecture |
-| Wed, May 4  | Summary: Learning from Data | Lecture 
+| Wed, Mar 23 | Modal Logics for Knowledge and Belief | [Lecture](lectures/Lec18_epistemic_logic.pdf) | [Modal Logic Playground](https://rkirsling.github.io/modallogic/)<br/>[DSL for belief programming with partial observability](https://dl.acm.org/doi/pdf/10.1145/3428268) |
+| Fri, Mar 25 | Representing agent knowledge with $KT45^n$  | [Lecture](lectures/Lec19_epistemic_logic2.pdf)|[An Introduction to Logics of Knowledge and Belief](https://arxiv.org/pdf/1503.00806.pdf) | |
+| Mon, Mar 28 | Elementary Decision Theory | [Lecture](lectures/Lec20_decision_theory.pdf) | [Blog post](blog/03_31_decision_theory.html)|
+| Wed, Mar 30 | Elementary Game Theory | [Lecture](lectures/Lec21_game_theory.pdf) |  R&N 17.5, 17.6<br/>[Epistemic Game Theory](https://plato.stanford.edu/entries/epistemic-game/)<br/>[Two-person Zero-sum Games](https://www.cs.cmu.edu/afs/cs/academic/class/15859-f01/www/notes/mat.pdf) _Note that in this document, Player 1 chooses a row, whereas our Player 1 chooses a column_ |
+| Fri, Apr 1  | Summary: Acting under incomplete or uncertain knowledge | [Lecture](lectures/Lec22_agent_reasoning_summary.pdf) |[Probabilistic Modal Logic](https://www.aaai.org/Papers/AAAI/2007/AAAI07-077.pdf)<br/>[Factored Models for Probabilistic Modal Logic](https://www.aaai.org/Papers/AAAI/2008/AAAI08-086.pdf)|
+| Mon, Apr 4  | Temporal Logic for Representing Transitions | Lecture | **Last day to Withdraw** <br/> R&N 14, 17| 
+| Wed, Apr 6  | Exam Review | Review | |
+| Fri, Apr 8  | Exam 3: Agent-based Reasoning | Exam |  |
+| Mon, Apr 11 | LTL Applications | Lecture | [Intractability of LTL Objectives in RL](https://arxiv.org/pdf/2111.12679.pdf)<br/>[Learning Interpretable Models Expressed in LTL](https://www.cs.toronto.edu/~acamacho/papers/cam-mci-icaps19.pdf)<br/>
+[LTL as an Executable Semantics for Planning Languages](https://link.springer.com/content/pdf/10.1007/s10849-006-9022-1.pdf) |
+| Wed, Apr 13 | Markov Chains for Representing Transitions | Lecture ||
+| Fri, Apr 15 | Markov Decision Processes   | Lecture ||
+| Mon, Apr 18 | Learning Programs via Genetic Programming | Lecture ||
+| Wed, Apr 20 | Learning Programs via Program Synthesis | Lecture ||
+| Fri, Apr 22 | Counter-example Guided Inductive Search| Lecture ||
+| Mon, Apr 25 | Type-directed Synthesis | Lecture | 
+| Wed, Apr 27 | | Lecture |
+| Fri, Apr 29 |  | Lecture |
+| Mon, May 2  | | Lecture |
+| Wed, May 4  | Exam 4: Learning Programs | Exam | 
 | Fri, May 6  | Trends and Hot Topics in AI | Lecture | **Last Day of Classes**<br/>**All programming assignments due (hard)** |
 | Thu, May 12 | **Final Exam** | 7:30am-10:15, VOTEY 207 |

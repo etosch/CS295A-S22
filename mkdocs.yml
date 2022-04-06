@@ -35,6 +35,7 @@ plugins:
   - blogging:
       dirs:
         - blog
+  - diagrams
 
 markdown_extensions:
   - footnotes
