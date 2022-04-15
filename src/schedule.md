@@ -61,7 +61,7 @@ Huth and Ryan is an excellent introductory text for temporal and epistemic logic
 | Fri, Apr 8  | Exam 3: Agent-based Reasoning | Exam |  |
 | Mon, Apr 11 | Exam 3: Agent-based Reasoning | Make-Up Exam | |
 | Wed, Apr 13 | Probabilistic Modeling Review | In-class Work | **[Probabilistic Modeling Worksheet out](https://www.overleaf.com/read/fdnmqtxhdpbp)**|
-| Fri, Apr 15 | Exam and programming assignment review | In-class Unit 3 review | 
+| Fri, Apr 15 | Exam and programming assignment review | In-class Unit 3 review<br/>*[Programming Assignment 2 out](assignments/2/programming_assignment_2.md)** | 
 | Mon, Apr 18 | LTL Applications | Lecture | <div>[Intractability of LTL Objectives in RL](https://arxiv.org/pdf/2111.12679.pdf)<br/>[Learning Interpretable Models Expressed in LTL](https://www.cs.toronto.edu/~acamacho/papers/cam-mci-icaps19.pdf)<br/>[LTL as an Executable Semantics for Planning Languages](https://link.springer.com/content/pdf/10.1007/s10849-006-9022-1.pdf)<br/>[Decoy Allocation Games on Graphs with LTL](https://www.gamesec-conf.org/2020/GameSec_Proceeding_2020/Paper%203.4.pdf)</div> |
 | Wed, Apr 20 | Markov Chains for Representing Transitions | Lecture ||
 | Fri, Apr 22 | Markov Decision Processes   | Lecture |**Probabilistic Modeling worksheet due in class**|
