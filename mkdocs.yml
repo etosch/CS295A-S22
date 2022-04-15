@@ -26,6 +26,9 @@ nav:
   - "schedule.md"
   - "blogging_guidelines.md"
   - "blog.md"
+  - "Programming Assignments":
+    - "assignments/1/programming_assignment_1.md"
+    - "assignments/2/programming_assignment_2.md"
   - "covid_policies.md"
   - "UVM_resources.md"
   

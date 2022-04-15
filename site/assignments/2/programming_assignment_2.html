@@ -1,0 +1,777 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Public Course Website for CS295A/CS395D S2022 at Universtiy of Vermont">
+      
+      
+        <meta name="author" content="Emma Tosch (etosch@uvm.edu)">
+      
+      
+        <link rel="canonical" href="https://uvm.edu/~etosch/CS295A-S22/assignments/2/programming_assignment_2.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.10">
+    
+    
+      
+        <title>Programming Assignment 2: Probabilistic State - Artificial Intelligence</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d6be258b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#programming-assignment-2-probabilistic-state" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="Artificial Intelligence" class="md-header__button md-logo" aria-label="Artificial Intelligence" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Artificial Intelligence
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Programming Assignment 2: Probabilistic State
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/uvm-maple/CS295A-S22/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Artificial Intelligence" class="md-nav__button md-logo" aria-label="Artificial Intelligence" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Artificial Intelligence
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/uvm-maple/CS295A-S22/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        CS 295A/395D: Artificial Intelligence
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syllabus.html" class="md-nav__link">
+        Syllabus
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedule.html" class="md-nav__link">
+        Schedule
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogging_guidelines.html" class="md-nav__link">
+        Blogging Guidelines
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog.html" class="md-nav__link">
+        Course Blog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Programming Assignments
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Programming Assignments" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Programming Assignments
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1/programming_assignment_1.html" class="md-nav__link">
+        Programming Assignment 1: Logic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Programming Assignment 2: Probabilistic State
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="programming_assignment_2.html" class="md-nav__link md-nav__link--active">
+        Programming Assignment 2: Probabilistic State
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    Objectives
+  </a>
+  
+    <nav class="md-nav" aria-label="Objectives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-demo" class="md-nav__link">
+    Web Demo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-submit" class="md-nav__link">
+    How to submit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-1-implement-heuristic-search-for-minimal-queries" class="md-nav__link">
+    Option 1: Implement heuristic search for minimal queries
+  </a>
+  
+    <nav class="md-nav" aria-label="Option 1: Implement heuristic search for minimal queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objectives_1" class="md-nav__link">
+    Objectives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-2-implement-a-game-theory-game-generator" class="md-nav__link">
+    Option 2: Implement a game theory game generator
+  </a>
+  
+    <nav class="md-nav" aria-label="Option 2: Implement a game theory game generator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specification" class="md-nav__link">
+    Specification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation" class="md-nav__link">
+    Simulation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objectives_2" class="md-nav__link">
+    Objectives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-3-implement-the-probabilistic-modeling-worksheet-as-a-simulation" class="md-nav__link">
+    Option 3: Implement the probabilistic modeling worksheet as a simulation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../covid_policies.html" class="md-nav__link">
+        Covid Policies
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UVM_resources.html" class="md-nav__link">
+        UVM Resources
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    Objectives
+  </a>
+  
+    <nav class="md-nav" aria-label="Objectives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-demo" class="md-nav__link">
+    Web Demo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-submit" class="md-nav__link">
+    How to submit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-1-implement-heuristic-search-for-minimal-queries" class="md-nav__link">
+    Option 1: Implement heuristic search for minimal queries
+  </a>
+  
+    <nav class="md-nav" aria-label="Option 1: Implement heuristic search for minimal queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objectives_1" class="md-nav__link">
+    Objectives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-2-implement-a-game-theory-game-generator" class="md-nav__link">
+    Option 2: Implement a game theory game generator
+  </a>
+  
+    <nav class="md-nav" aria-label="Option 2: Implement a game theory game generator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specification" class="md-nav__link">
+    Specification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation" class="md-nav__link">
+    Simulation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objectives_2" class="md-nav__link">
+    Objectives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-3-implement-the-probabilistic-modeling-worksheet-as-a-simulation" class="md-nav__link">
+    Option 3: Implement the probabilistic modeling worksheet as a simulation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/uvm-maple/CS295A-S22/edit/master/docs/assignments/2/programming_assignment_2.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="programming-assignment-2-probabilistic-state">Programming Assignment 2: Probabilistic State</h1>
+<p>You will have the option of three possible programming assignments, depending on the skills you'd like to exercise. You are welcomed to work in pairs. </p>
+<h2 id="objectives">Objectives</h2>
+<p>Each possible assignment will have specific learning objectives related to the topics in the course, designed to build depth. </p>
+<h3 id="web-demo">Web Demo</h3>
+<p>You will additionally be asked to produce an externally-facing demonstration of your code. The benefit to undergraduates and those seeking industrial employment is that your demo can be listed as part of your portfolio work. For graduate students, an increasing number of academic conferences are requiring artifacts, which typically take the form of Notebooks, web demonstrations, or containerized environments (for more core systems work). Spinning up web servers and producing quick demonstrations is an essential skill for anyone in a computational field. </p>
+<p>If you manage your own server, you may host there. However, all students at UVM have access to the web server <a href="https://silk.uvm.edu/manual/">silk</a>. If you have not set up silk already, you will need to email <code>saa@uvm.edu</code> requesting an account. </p>
+<p>Since all of your code should be in Python, you should use <a href="https://brython.info">Brython</a> to make it web-accessible. The demo can be a simple setup, with two panes: one for input (which itself may contain multiple panes) and one for output. </p>
+<h3 id="how-to-submit">How to submit</h3>
+<p>Similarly to the <a href="../1/programming_assignment_1.html#how-to-submit">first programming assignment</a>, <code>gzip</code> and archive all of your files, including a README with a link to your web demo into a file with the name <code>p2_&lt;your_last_name&gt;.tgz</code>. If you collaborate with another student, list both of your last names; only one of you needs to upload the file. </p>
+<h2 id="option-1-implement-heuristic-search-for-minimal-queries">Option 1: Implement heuristic search for minimal queries</h2>
+<p>Write a program that takes two inputs:</p>
+<ol>
+<li>A Bayesian Network</li>
+<li>A query on the Bayesian Network</li>
+</ol>
+<p>and outputs a minimized representation of the query <em>and a cost associated with its computation</em>.  The network should be specified in the <a href="https://en.wikipedia.org/wiki/Graph_Modelling_Language">Graph Modeling Language</a>. This should be read in from a file. Your query should have the grammar that follows this rough BNF-esque specification:</p>
+<div class="highlight"><pre><span></span><code>query ::= &quot;P(&quot; &lt;joint&gt; [&lt;conditional&gt;] &quot;)&quot;
+joint ::= $A_1$[&quot;=&quot; $a_1$] [&quot;,&quot; &lt;joint&gt;]
+do ::= &quot;do(&quot; &lt;joint&gt; &quot;)&quot;
+conditional ::= &quot;|&quot; &lt;joint&gt; [&lt;do&gt;]
+</code></pre></div>
+<p>The query can be a command line argument. Thus, I expect to be able to run your program like so:</p>
+<blockquote>
+<p>python -m minimize_probs --dag file_with_dag.gml --query "P(C|D, do(E=e))"</p>
+</blockquote>
+<p>The main entry point of your code<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> will roughly follow these steps:</p>
+<ol>
+<li>Load in the DAG. You can use the Python library <a href="https://networkx.org">networkX</a> to read the graphs. </li>
+<li>Parse the query and determine which variables are being jointly queried and which are being conditioned on.</li>
+<li>Verify that the graph is a DAG. If it is not, print an error and exit the program.</li>
+<li>Generate the factorized joint probability distribution for the graph. </li>
+<li>Apply only valid operations to the joint probability distribution to produce an expression equivalent to the input query. </li>
+</ol>
+<p>This final step can be framed as a search problem. Your initial state is the factorized distribution and your final state is an expression equivalent to the input query. Each action you take is the application of a rule to a point in a data structure representing the term you are rewriting:</p>
+<ol>
+<li>Bayes Rule (<span class="arithmatex">\(P(X\mid Y) = P(Y\mid Y)P(Y)/P(X)\)</span>).</li>
+<li>Multiplication/Chain Rule/Conditional probability (<span class="arithmatex">\(P(X, Y) = P(X\mid Y)P(Y)\)</span>).</li>
+<li>Law of total probability/marginalization (<span class="arithmatex">\(\sum_{y\in\mathcal{Y}} P(X, Y=y) = P(X)\)</span>).</li>
+<li>Unit measure (<span class="arithmatex">\(\sum_{x\in\mathcal{X}} P(X=x) = 1\)</span>).</li>
+</ol>
+<p>While these four rules form the core set of rewrites, you may want to break them into smaller rewrite rules. </p>
+<p>The search part of this assignment involves two choices: which rule to apply and which point in the expression to alter. Your objectives are:</p>
+<ol>
+<li><strong>Produce a <em>correct</em> expression for the input query.</strong> An expression is correct if (a) for all inputs, it produces the same outputs as the query expression and (b) it only contains quantities encoded by the DAG.</li>
+<li><strong>Produce a <em>minimal</em> expression for the input query.</strong> An exprssion is minimal according to a cost function you will define. This is a design you choice you will make. The only requirement is that it contain the fewest number of variables. You may additionally assign cost to e.g. the position of summation symbols.</li>
+<li><strong>Produce this expression with the fewest rewrite steps.</strong> Your output should include both the resulting expression and the number of steps your program took to find it. </li>
+</ol>
+<p>For this assignment, you may assume that all variables are binary, although if you'd like to extend them to be arbitrary and finite <span class="arithmatex">\(k\)</span>-ary variables, you are welcome to do that. Note that I do not recommend representing variables with infinite support at this time. </p>
+<h3 id="objectives_1">Objectives</h3>
+<p>This assignment develops three skills: (1) defining a heuristic function, (2) manipulating probabilistic expressions, and (3) implementing a search strategy. I strongly recommend this option if you struggled with Question 2 on Exam 2. </p>
+<h2 id="option-2-implement-a-game-theory-game-generator">Option 2: Implement a game theory game generator</h2>
+<p>For this assignment, your task will be to generate 2-player <span class="arithmatex">\(n\times m\)</span> games, along with their solution and a <a href="#simulation">simulation module</a>. Your main program should be at least 1-step interactive: </p>
+<ol>
+<li>Generate a game according to a <a href="#game-speciication">specification</a> </li>
+<li>Print a representation of the game</li>
+<li>Query the user for their strategy</li>
+<li>Verify whether the user's strategy is optimal</li>
+</ol>
+<h3 id="specification">Specification</h3>
+<p>You may support the specification as command line arguments or by reading in a, e.g., <a href="https://yaml.org">YAML</a> or <a href="https://toml.io/en/">TOML</a> configuration file. It should include parameters that capture the following information:</p>
+<ul>
+<li>number of player actions</li>
+<li>number of opponent actions</li>
+<li>whether the game is zero-sum and if so, whether there is a saddle point</li>
+<li>whether there should be a dominant strategy</li>
+<li>whether the best stategy is the same under coordination</li>
+</ul>
+<p>You will then generate games according to these specifications, along with their solutions. <strong>All rewards should be integer-valued.</strong></p>
+<h3 id="simulation">Simulation</h3>
+<p>In addition to the core program, you should write a simulator that plays two agents against each other for multiple games. Create a suite of at least three agents, each of which may have some or all of the following characteristics:</p>
+<p><strong>Starting strategies</strong></p>
+<ol>
+<li>Selects action uniformly at random. </li>
+<li>Starts with the globally highest payout. </li>
+<li>Starts with the globally lowest payout.</li>
+<li>Starts with the optimal game-theoretic solution.</li>
+</ol>
+<p><strong>Subsequent strategies</strong></p>
+<ol>
+<li>Maximizes in the next round, conditioned on the other player's action in this round.</li>
+<li>Models action selection as belief, updates beliefs about stratgies (i.e., model the choice as a bandits problem.)</li>
+<li>Maintain a probability <span class="arithmatex">\(p\)</span> of switching to a random strategy, initially set to 1. If the agent loses, randomly select a number from <span class="arithmatex">\([0,1]\)</span> and if the number is greater than <span class="arithmatex">\(p\)</span> (or if <span class="arithmatex">\(p\)</span> is 1), the randomly select a new action and reset <span class="arithmatex">\(p\)</span> to 1. Otherwise, update <span class="arithmatex">\(p\)</span> to be <span class="arithmatex">\(0.5p\)</span>.</li>
+</ol>
+<p>Hand in a Jupyter Notebook showing the results of 3 agents playing each other (9 settings) for 100 randomly generated <span class="arithmatex">\(2\times 2\)</span> games under the following configurations:</p>
+<ol>
+<li>Game is zero-sum with saddle point</li>
+<li>Game is zero-sum without saddle point</li>
+<li>Optimal strategy is dominant </li>
+<li>Optimal strategy is mixed</li>
+</ol>
+<p>Track whether each agent converged to the optimal solution according to your program.</p>
+<p>Finally, generate 1000 <span class="arithmatex">\(2\times 2\)</span> games where the payoff for each player is between -10 and 10 and report how many appear in each of the four configurations listed above. </p>
+<h3 id="objectives_2">Objectives</h3>
+<p>This assignment develops three skills: (1) mechanism design, (2) solving for optimal solutions to 2-player games, and (3) Monte Carlo simulation. I strongly recommend this option if you struggled with Question 5 on Exam 2. </p>
+<h2 id="option-3-implement-the-probabilistic-modeling-worksheet-as-a-simulation">Option 3: Implement the probabilistic modeling worksheet as a simulation</h2>
+<p><em>Note: I am including this option here for students because it was requested, but I do not recommend it.</em></p>
+<p>Implement the scenario outlined in the <a href="https://www.overleaf.com/project/6256bff349034c7f1b9ea170">probabilistic modeling worksheet</a> and support queries on strategies as expressed in LTL. </p>
+<p>In addition to implementing the basic mechanics described in the the worksheet, you will need to (1) compute the expected utility in terms of hull damage and system liveness for an arbitrary time window and (2) translate a high-level strategy expressed in LTL into an executable strategy within the system. </p>
+<p>Thus, the minimum specification requires you to implement all of the reasoning such that I can use your program to answer all of the queries listed in the worksheet, modulo minor variation.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>If you are not familiar with it, I strongly recommend you use <a href="https://docs.python.org/3/library/argparse.html">argparse</a> to handle command line arguments.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../1/programming_assignment_1.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Programming Assignment 1: Logic" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Programming Assignment 1: Logic
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../covid_policies.html" class="md-footer__link md-footer__link--next" aria-label="Next: Covid Policies" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Covid Policies
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e3b2bf44.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
