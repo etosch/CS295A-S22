@@ -29,6 +29,6 @@ clean:
 	(\
 		rm *.html; \
 		rm *.xml; \
-		rm -rf lectures blog; \
+		rm -rf lectures blog assignments code; \
 		rm sitemap.xml.gz; \
 	)

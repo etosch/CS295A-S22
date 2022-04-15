@@ -7,3 +7,6 @@ __pycache__
 .send_email.sh
 .*~
 .vscode
+assignments
+code
+lectures
