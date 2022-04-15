@@ -4,8 +4,7 @@
 # Feels silly to import all of pandas just to read a 
 # markdown table, but oh well.
 
-import argparse, os, subprocess
-from urllib import response
+import argparse, os
 from utils import read_markdown_table
 from dateutil.parser import parse as dateparse
 from dateutil.relativedelta import relativedelta
@@ -22,10 +21,10 @@ sfile = os.path.expanduser("~") + os.path.sep + ".schedule"
 
 schedule = read_markdown_table(args.schedule_file)
 # just get the dates for lectures
-dates = schedule[schedule["Form"].str.contains("Lecture")]["Date"] 
+dates = schedule[schedule["Form"].str.contains("Lecture")][["Date", "Topic"]]
 # now get the future dates
-future = dates[dates.apply(dateparse) > dateparse(str(today))]
-next_lecture = future.iloc[0]
+future = dates[dates["Date"].apply(dateparse) > dateparse(str(today))]
+next_lecture, next_lecture_topic = future.iloc[0]
 # now get the reminders already sent
 # we exepect to execute the cron job daily, but 
 # over weekends that means we might send more than one reminder
@@ -42,10 +41,10 @@ with open(sfile, "r") as f:
         last_lecture_emailed = dateparse(lines[-1])
 
 email_text = """From: Emma.Tosch@uvm.edu
-To: test - Artificial Intelligence _202201-NE-Crosslisted_ CS295A_CS395D <43f7098c.uvmoffice.onmicrosoft.com@amer.teams.ms>
-Subject: Blogging for Lecture ({lecture_date})
+To: Artificial Intelligence _202201-NE-Crosslisted_ CS295A_CS395D <43f7098c.uvmoffice.onmicrosoft.com@amer.teams.ms>
+Subject: Blogging for Lecture ({lecture_date}---{lecture_topic})
 
-@Artificial Intelligence (202201-NE-Crosslisted) CS295A/CS395D The next opportunity to 
+<at>Artificial Intelligence (202201-NE-Crosslisted) CS295A/CS395D</at> The next opportunity to 
 blog is for lecture on {lecture_date}. Please respond to this message by 9pm on 
 {response_date} if you would like to create a blog post for lecture on {lecture_date}.
 
@@ -53,6 +52,7 @@ See the blogging guidelines for more information:
 https://uvm.edu/~etosch/CS295A-S22/blogging_guidelines.html
 """.format(
         to_email = args.email,
+        lecture_topic = str(next_lecture_topic).strip(),
         lecture_date = str(next_lecture).strip(),
         response_date = (dateparse(next_lecture) + relativedelta(days=-1)).strftime("%a, %b %d").strip())
 

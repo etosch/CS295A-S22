@@ -1,6 +1,24 @@
 import pandas
 
+
+def check_format(src):
+    # Make sure we don't have errant |s in the file
+    with open(src, "r") as f:
+        while True:
+            line = f.readline()
+            if not line: break
+            if line.startswith("|"):
+                num_bars = 0
+                for c in line: 
+                    if c == '|':
+                        num_bars +=1
+                if num_bars != 5:
+                    print(line, num_bars)
+                    exit()
+
+
 def read_markdown_table(src):
+    check_format(src)
     with open(src, "r") as f:
         while True:
             line = f.readline()
