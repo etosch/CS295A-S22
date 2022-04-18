@@ -55,7 +55,8 @@ Huth and Ryan is an excellent introductory text for temporal and epistemic logic
 | Fri, Mar 25 | Representing agent knowledge with $KT45^n$  | [Lecture](lectures/Lec19_epistemic_logic2.pdf)|[An Introduction to Logics of Knowledge and Belief](https://arxiv.org/pdf/1503.00806.pdf) [ICAPS 2020 Tutorial on Epistemic Planning](https://www.youtube.com/watch?v=lmimHMB3X5M) |
 | Mon, Mar 28 | Elementary Decision Theory | [Lecture](lectures/Lec20_decision_theory.pdf) | [Blog post](blog/03_31_decision_theory.html)|
 | Wed, Mar 30 | Elementary Game Theory | [Lecture](lectures/Lec21_game_theory.pdf) |  R&N 17.5, 17.6<br/>[Epistemic Game Theory](https://plato.stanford.edu/entries/epistemic-game/)<br/>[Two-person Zero-sum Games](https://www.cs.cmu.edu/afs/cs/academic/class/15859-f01/www/notes/mat.pdf) _Note that in this document, Player 1 chooses a row, whereas our Player 1 chooses a column_ |
-| Fri, Apr 1  | Summary: Acting under incomplete or uncertain knowledge | [Lecture](lectures/Lec22_agent_reasoning_summary.pdf) |[Probabilistic Modal Logic](https://www.aaai.org/Papers/AAAI/2007/AAAI07-077.pdf)<br/>[Factored Models for Probabilistic Modal Logic](https://www.aaai.org/Papers/AAAI/2008/AAAI08-086.pdf)|
+| Fri, Apr 1  | Summary: Acting under incomplete or uncertain knowledge | [Lecture](lectures/Lec22_agent_reasoning_summary.pdf) |[Probabilistic Modal Logic](https://www.aaai.org/Papers/AAAI/2007/AAAI07-077.pdf)<br/>[Factored Models for Probabilistic Modal Logic](https://www.aaai.org/Papers/AAAI/2008/AAAI08-086.pdf)<br/>
+[SPIN Model Checking for the Verification of Clinical Guidelines](https://www.cs.vu.nl/~annette/FinalVersions/Terenziani1.pdf)|
 | Mon, Apr 4  | Temporal Logic for Representing Transitions | Lecture | **Last day to Withdraw** <br/> R&N 14, 17| 
 | Wed, Apr 6  | Exam Review | Review | |
 | Fri, Apr 8  | Exam 3: Agent-based Reasoning | Exam |  |
@@ -68,6 +69,7 @@ Huth and Ryan is an excellent introductory text for temporal and epistemic logic
 | Mon, Apr 25 | Learning Programs via Genetic Programming | Lecture ||
 | Wed, Apr 27 | Learning Programs via Program Synthesis | Lecture | **Peer-graded Probabilistic Modeling worksheet due in class**|
 | Fri, Apr 29 | Counter-example Guided Inductive Search| Lecture | Probabilistic Modeling worksheet solutions |
-| Mon, May 2 | More Program Synthesis | Lecture | |
-| Wed, May 4 | Exam 4: Time and Programs | Exam | **Last Day of Classes**<br/>**All programming assignments due (hard)** |
-| Thu, May 12 | **Final Exam** | 7:30am-10:15, VOTEY 207 | |
+| Mon, May 2 | More Program Synthesis | Lecture | [VerifAI: A Toolkit for the Formal Design and Analysis of Artificial Intelligence-Based Systems](https://people.eecs.berkeley.edu/~sseshia/pubdir/verifai-cav19.pdf) |
+| Wed, May 4 | Exam Review | Review | | 
+| Fri, May 6 | Exam 4: Time and Programs | Exam | **Last Day of Classes** |
+| Thu, May 12 | **Final Exam** | 7:30am-10:15, VOTEY 207 |**All programming assignments due (hard)** |
