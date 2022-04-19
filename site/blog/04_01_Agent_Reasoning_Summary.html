@@ -1,0 +1,520 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Public Course Website for CS295A/CS395D S2022 at Universtiy of Vermont">
+      
+      
+        <meta name="author" content="Emma Tosch (etosch@uvm.edu)">
+      
+      
+        <link rel="canonical" href="https://uvm.edu/~etosch/CS295A-S22/blog/04_01_Agent_Reasoning_Summary.html">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.10">
+    
+    
+      
+        <title>Summary: Agent Reasoning - Artificial Intelligence</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.d6be258b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#summary-agent-reasoning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Artificial Intelligence" class="md-header__button md-logo" aria-label="Artificial Intelligence" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Artificial Intelligence
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Summary: Agent Reasoning
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/uvm-maple/CS295A-S22/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Artificial Intelligence" class="md-nav__button md-logo" aria-label="Artificial Intelligence" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Artificial Intelligence
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/uvm-maple/CS295A-S22/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        CS 295A/395D: Artificial Intelligence
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../syllabus.html" class="md-nav__link">
+        Syllabus
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedule.html" class="md-nav__link">
+        Schedule
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blogging_guidelines.html" class="md-nav__link">
+        Blogging Guidelines
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog.html" class="md-nav__link">
+        Course Blog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Programming Assignments
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Programming Assignments" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Programming Assignments
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assignments/1/programming_assignment_1.html" class="md-nav__link">
+        Programming Assignment 1: Logic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assignments/2/programming_assignment_2.html" class="md-nav__link">
+        Programming Assignment 2: Probabilistic State
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../covid_policies.html" class="md-nav__link">
+        Covid Policies
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UVM_resources.html" class="md-nav__link">
+        UVM Resources
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#game-theory-recipe-for-mixed-strategies" class="md-nav__link">
+    Game Theory: Recipe for mixed strategies
+  </a>
+  
+    <nav class="md-nav" aria-label="Game Theory: Recipe for mixed strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#an-example-of-game-theory" class="md-nav__link">
+    An Example of Game Theory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeling-game-theory-as-decision-theory" class="md-nav__link">
+    Modeling Game Theory as Decision Theory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimax-theorem-in-game-theory" class="md-nav__link">
+    Minimax theorem in Game Theory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-hats-problem" class="md-nav__link">
+    3 Hats Problem
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/uvm-maple/CS295A-S22/edit/master/docs/blog/04_01_Agent_Reasoning_Summary.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="summary-agent-reasoning">Summary: Agent Reasoning</h1>
+<p>Today we looked at examples of game theory, and expanded game theory into decision theory, as well as beginning to look at epistemic logic through  the three hats problem.</p>
+<p>Looking at design patterns in artificial intelligence and machine learning, most tasks come down to alternating between computing an expected value and making a choice that maximizes some function (which itself can be composed of other functions depending on complexity).  We compute expected values because they are summary information.  They are useful when we don't know the point value (due to aleatory or epistemic uncertainty) but we do know the distribution.  With this information, we can use the expected value to make decisions.</p>
+<h2 id="game-theory-recipe-for-mixed-strategies">Game Theory: Recipe for mixed strategies</h2>
+<p>In order to find a player's chance of taking a particular action, we use the following "recipe":</p>
+<ol>
+<li>Compute Expression for E[P|Q=q] using P's utility function<ol>
+<li>This will be over all possible choices for P</li>
+<li>The pmf comes from P's choice</li>
+<li>Q's choice is fixed</li>
+</ol>
+</li>
+<li>Compute expression for other values of Q=q</li>
+<li>Set expressions equal to each other and solve for p.</li>
+</ol>
+<h3 id="an-example-of-game-theory">An Example of Game Theory</h3>
+<p><img alt="Example Chart" src="example-chart.png" title="Example Chart" /></p>
+<p>EU[E|O=1] = 2p + (-3)(1-p)
+= 2p - 3 + 3p
+= 5p - 3</p>
+<p>EU[E|O=2] = (-3)p + (4)(1-p)
+= -3p + 4 - 4p
+= -7p + 4</p>
+<p>Set equal EU[E|O=1] = EU[E|O=2]
+5p - 3 = -7p + 4
+12p = 7
+p = 7/12</p>
+<p>Can also be looked at as min{EU[E|O=1],EU[E|O=2]}</p>
+<p><img alt="Example Graph" src="example-graph.png" title="Example Chart" /></p>
+<p>d = |EU[E|O=1] - EU[E|O=2]|
+0 = |12p - 7|
+0 = 12p - 7       0 = -12p + 7
+p = 7/12          p = 7/12</p>
+<p>Can also be solved using derivatives, min or max on EU[E]</p>
+<p>EU[E] = 2pq +(-3)(1-p)(q) + (-3)(p)(1-q) + (4)(1-p)(1-q)
+= 4 + p - 7q + 12pq</p>
+<p>p -&gt; set this to max/min
+q -&gt; independent</p>
+<p>d/dq (EU[E]) = d/dq(4+p - 7q + 12pq)
+0 = -7 + 12p
+p = 7/12</p>
+<h2 id="modeling-game-theory-as-decision-theory">Modeling Game Theory as Decision Theory</h2>
+<p>Agents here are all "rational": So long as they have complete knowledge of the payoff matrix, they will seek to maximize their utility.  The assumption we make is that all players are treating the game in a decision-theoretic manner.  Given that agent's actions are made simultaneously and without coordination or communication between the agents, we can treat the other agent's (Player Q's) actions as random state.  Then each state node encapsulates all the uncertainty about those actions, so we can use game theory to determine the state distribution.</p>
+<p><img alt="Decision Theory Model" src="decision-theory-model.png" title="Decision Theory Model" /></p>
+<h2 id="minimax-theorem-in-game-theory">Minimax theorem in Game Theory</h2>
+<p>For planning with logic, we search through the change state a logical inference over limited language while enforcing constraints.  We used heuristics and cost, with heuristics being estimates (used when it's alright to be slightly sub-optimal) while costs assign value to the state (used for ordering).  In the past, we used this deterministically while with game theory it is probabilistic.  In game theory, there is a choice in objective between minimizing max loss and maximizing minimum gain.  To solve this, we assume a zero sum game where a player maximizing their min gain is equal to minimizing the max loss.  </p>
+<p>In game theory, decisions are being made locally.  As such, we are looking for an optimal decision as optimal is local (which can be controlled), whereas optimum cannot be controlled as it is global.  For these zero-sum games in game theory, there is a saddle point: the minimum between choices for P and maximum between choices for Q is what we want.</p>
+<h2 id="3-hats-problem">3 Hats Problem</h2>
+<p>Looking at other models, we can formalize with epistemic knowledge.  An example of this is the three hats problem, a famous puzzle.  Here, we have 3 people wearing hats.  In total, there are 3 red hats and 2 white hats available.  We put a hat on each person without them seeing what hat they are wearing.  They can see what hat the other people are wearing.  When then ask if the agents (people wearing the hats) know what hat they are wearing.  We can then look at the knowledge that each person has, looking at all the states (here W means a white hat and R means a red hat):
+WWR
+WRW
+RWW
+WRR
+RWR
+RRW
+RRR</p>
+<p>In some of these states, it is possible for some agents to eventually know what hat they are wearing using their knowledge of the others' hats and eventually the others' knowledge of their own hats, whereas in others (such as RRR), none can figure out what hat they are wearing.  More information can be found online: <a href="https://en.wikipedia.org/wiki/Induction_puzzles#The_King's_Wise_Men_Hat_Puzzle">Wikipedia description</a>, <a href="https://www.combinatorics.org/ojs/index.php/eljc/article/view/v24i1p37/pdf">The three colour hat guessing game on cycle graphs</a>.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e3b2bf44.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
