@@ -12,14 +12,14 @@
         <meta name="author" content="Emma Tosch (etosch@uvm.edu)">
       
       
-        <link rel="canonical" href="https://uvm.edu/~etosch/CS295A-S22/blog/03_31_decision_theory.html">
+        <link rel="canonical" href="https://uvm.edu/~etosch/CS295A-S22/blog/05_06_aperiodicity.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.10">
     
     
       
-        <title>Basic Decision Theory - Artificial Intelligence</title>
+        <title>Another way to think about aperiodicity - Artificial Intelligence</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#basic-decision-theory" class="md-skip">
+        <a href="#another-way-to-think-about-aperiodicity" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Basic Decision Theory
+              Another way to think about aperiodicity
             
           </span>
         </div>
@@ -353,6 +353,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aperiodicity-formally" class="md-nav__link">
+    Aperiodicity, formally
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-aperiodicity-really-gives-you" class="md-nav__link">
+    What aperiodicity really gives you
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -363,100 +385,96 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/uvm-maple/CS295A-S22/edit/master/docs/blog/03_31_decision_theory.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/uvm-maple/CS295A-S22/edit/master/docs/blog/05_06_aperiodicity.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="basic-decision-theory">Basic Decision Theory</h1>
-<p>In class, we saw an example of decision theory: we had the choice between buying two cars, <span class="arithmatex">\(C_1\)</span> and <span class="arithmatex">\(C_2\)</span> (we could not decide to not buy a car) and we had the option of running at most one test on one of the cars, where test <span class="arithmatex">\(T_1\)</span> could only be used on car 1 and test <span class="arithmatex">\(T_2\)</span> could only be used on car 2: you can think about this as if the manufacturer created the tests, so you cannot apply <span class="arithmatex">\(T_1\)</span> on <span class="arithmatex">\(C_2\)</span> and vice versa. </p>
-<p>We were also told the following information about the cars and tests:</p>
-<ul>
-<li>Car <span class="arithmatex">\(C_1\)</span> costs $500 below the market rate.<ul>
-<li>If <span class="arithmatex">\(C_1\)</span> is faulty (i.e., <span class="arithmatex">\(C_1\)</span> = -), then it costs $700 to repair.</li>
-</ul>
-</li>
-<li>Car <span class="arithmatex">\(C_1\)</span> is not faulty with probability 0.7.</li>
-<li>
-<p>Test <span class="arithmatex">\(T_1\)</span> tells us whether <span class="arithmatex">\(C_1\)</span> is faulty or not and costs $50.</p>
-<ul>
-<li><span class="arithmatex">\(T_1\)</span> is a true positive 80% of the time.</li>
-<li><span class="arithmatex">\(T_1\)</span> is a true negative 65% of the time. </li>
-</ul>
-</li>
-<li>
-<p>Car <span class="arithmatex">\(C_2\)</span> costs $250 below the market rate.</p>
-<ul>
-<li>If <span class="arithmatex">\(C_2\)</span> is faulty (i.e., <span class="arithmatex">\(C_2\)</span> = 0), then it costs $150 to repair.</li>
-</ul>
-</li>
-<li>Car <span class="arithmatex">\(C_2\)</span> is not faulty with probability 0.8.</li>
-<li>Test <span class="arithmatex">\(T_2\)</span> tells us whether <span class="arithmatex">\(C_1\)</span> is faulty or not and costs $20.<ul>
-<li><span class="arithmatex">\(T_2\)</span> is a true positive 75% of the time.</li>
-<li><span class="arithmatex">\(T_2\)</span> is a true negative 70% of the time. </li>
-</ul>
-</li>
-</ul>
-<p>From this information, we can enumerate some facts from this information alone:</p>
-<ol>
-<li><span class="arithmatex">\(P(C_1 = +) = 0.7\)</span></li>
-<li><span class="arithmatex">\(P(C_1 = -) = 0.3\)</span><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
-<li><span class="arithmatex">\(P(C_2 = +) = 0.8\)</span></li>
-<li><span class="arithmatex">\(P(C_2 = -) = 0.2\)</span><sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
-<li><span class="arithmatex">\(P(T_1 = + \mid C_1 = +) = 0.8\)</span></li>
-<li><span class="arithmatex">\(P(T_1 = - \mid C_1 = +) = 0.2\)</span><sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
-<li><span class="arithmatex">\(P(T_1 = + \mid C_1 = -) = 0.35\)</span><sup id="fnref4:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
-<li><span class="arithmatex">\(P(T_1 = - \mid C_1 = -) = 0.65\)</span></li>
-<li><span class="arithmatex">\(P(T_2 = + \mid C_2 = +) = 0.75\)</span></li>
-<li><span class="arithmatex">\(P(T_2 = - \mid C_2 = +) = 0.25\)</span><sup id="fnref5:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
-<li><span class="arithmatex">\(P(T_2 = + \mid C_2 = -) = 0.3\)</span><sup id="fnref6:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
-<li><span class="arithmatex">\(P(T_2 = - \mid C_2 = -) = 0.7\)</span></li>
-</ol>
-<p>Now, the first thing we did was consider the case where we run no test. Since there is no direct cost associated with not running the test, we only need to compute the expected utility (cost) of each car:</p>
-<p><span class="arithmatex">\(EU[C_1] = P(C_1 = +)(cost) + P(C_1 = -)(cost + repair) = 0.7*(-500) + 0.3*(-500+700) = -290\)</span>
-<span class="arithmatex">\(EU[C_2] = P(C_2 = +)(cost) + P(C_2 = -)(cost + repair) = 0.8*(-250) + 0.2*(-250+150) = -220\)</span></p>
-<p>Since we want to minimize cost, we choose the car with the minimum expected utility (car 1).</p>
-<p>The next thing we did was ask: suppose we decided to run test 1. Given the result of that test, which car should we choose?</p>
-<p>We need to break this problem into cases: the first case will condition on the the test returning + and the second case will condition on the test returning -. As part of your homework, you will work your way up to making a decision about which test to run, but first we are going to reason about adding in a small amount of additional uncertainty.</p>
-<p><span class="arithmatex">\(EU[C_1 \mid T_1 = +] = P(C_1 = + \mid T_1 = +)(cost + test) + P(C_1 = - \mid T_1 = +)(cost + repair + test)\)</span></p>
-<p>Note that we do not currently have <span class="arithmatex">\(P(C_1 = + \mid T_1 = +)\)</span>. Therefore, we must calculate it. Let's use Bayes Rule:</p>
-<p><span class="arithmatex">\(P(C_1 = + \mid T_1 = +) = P(T_1 = + \mid C_1 = +)P(C_1 = +)/P(T_1 = +)\)</span></p>
-<p>While we have the first two terms necessary (from our given information), we do not currently have <span class="arithmatex">\(P(T_1 = +)\)</span>. We will need to calculate this as well. Recall that we can use the law of total probability to marginalize out a variable:</p>
-<p><span class="arithmatex">\(P(T_1 = +) = P(T_1 = +, C_1 = +) + P(T_1 = +, C_1 = -)\)</span></p>
-<p>Although we do not have the joint probability of <span class="arithmatex">\(T_1\)</span> and <span class="arithmatex">\(C_1\)</span> directly, we can use the definition of conditional probability and substitute in values we do have:</p>
-<p><span class="arithmatex">\(P(T_1 = +) = P(T_1 = + \mid C_1 = +)P(C_1 = +) + P(T_1 = + \mid C_1 = -)P(C_1 = -)\)</span> 
-<span class="arithmatex">\(= 0.8*0.7 + 0.35*0.3 \approx 0.665\)</span></p>
-<p>Thus, we have two additional quantities to add to our list of known probabilities:</p>
-<ol>
-<li><span class="arithmatex">\(P(T_1 = +) = 0.665\)</span></li>
-<li><span class="arithmatex">\(P(T_1 = -) = 0.335\)</span></li>
-</ol>
-<p>Now we can compute <span class="arithmatex">\(P(C_1 = + \mid T_1 = +)\)</span> (and consequently <span class="arithmatex">\(P(C_1 = - \mid T_1 = +)\)</span>):</p>
-<ol>
-<li><span class="arithmatex">\(P(C_1 = + \mid T_1 = +) = 0.8*0.7/0.665 \approx 0.842\)</span></li>
-<li><span class="arithmatex">\(P(C_1 = - \mid T_1 = +) = 0.158\)</span></li>
-</ol>
-<p>And thus:</p>
-<p><span class="arithmatex">\(EU[C_1 \mid T_1 = +] = 0.842(-500+50) + 0.158(-500+700+50) \approx -339\)</span></p>
-<p>Now, since we are conditioning on having already performed the test, we need to compare with the exepected utility of car 2, given the outcome of the test:</p>
-<p><span class="arithmatex">\(EU[C_2 \mid T_1 = +] = P(C_1 = + \mid T_1 = +)(cost + test) + P(C_1=-\mid T_1 = +)(cost + test + repair)\)</span></p>
-<p>However, since test 1 doesn't tell us anything about car 2, we know that <span class="arithmatex">\(C_1\)</span> is independent of <span class="arithmatex">\(T_1\)</span>.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
-<p><span class="arithmatex">\(EU[C_2 \mid T_1 = +] = P(C_2 = +)(cost + test) + P(C_2=-)(cost + test + repair)\)</span> 
-<span class="arithmatex">\(= 0.8*(-250 + 20) + 0.2*(-250 + 150 + 20) = -200\)</span></p>
-<p>Now we want to choose the car that minimizes the expected cost (<span class="arithmatex">\(min\{-339, -200\}\)</span>) and so we choose car 1. </p>
-<p>Remember that so far we have only computed the optimum choice for what car to buy under two conditions: no test and when test <span class="arithmatex">\(T_1\)</span> is +. In class we discussed how computing the case for <span class="arithmatex">\(T_1 = -\)</span> causes us to choose a different outcome: we decide to purchase car 2 when <span class="arithmatex">\(T_1\)</span> returns -. </p>
-<p>The homework assignment asks you to perform a similar process for car 2 and it asks you to compute the expected utility of each test. (i.e., <span class="arithmatex">\(E[T_1]\)</span> and <span class="arithmatex">\(E[T_2]\)</span>). If you get stuck on this part, remember to enumerate the outcomes and their costs (which may be expected values) (e.g., there are only two possible outcomes for <span class="arithmatex">\(T_1\)</span>: the case where it is positive and you choose car 1 and the case where it is negative and you choose car 2).</p>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>These quantities were all calculated using the law of total probability from the information given.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:2">
-<p>This is an example of how belief or epistemic uncertainty impacts probabilities. We might think of both test accuracy and car quality as aleatory uncertainty due to, e.g., the randomness of flaws in the manufacturing process for the test or the randomness of part degredation for the car. However, when we are making decisions, we treat these random processes as our baseline beliefs about car quality. Although the probability that a random car is faulty might be due to a truly random process, our belief about its current state can be updated in light of new information &mdash; even though the test does not change anything about the mechanism that causes the car to be faulty.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+<h1 id="another-way-to-think-about-aperiodicity">Another way to think about aperiodicity</h1>
+<p>One of the concepts that students sometimes find confusing is what aperiodicity means in the context of Markov Chains: while it has to do with cycles in the transition graph, the presence of a cycle does not make a Markov chain periodic. However, the lack of cycles does make a Markoc chain aperiodic trivially &mdash; no cycles entails that the transition matrix cannot be irreducible. </p>
+<h2 id="aperiodicity-formally">Aperiodicity, formally</h2>
+<p>A Markov Chain is <em>periodic</em> iff there is at least one state such that, for some t &gt; 1, we can only visit that state every t steps. We can express this using first order logic like so:</p>
+<p><span class="arithmatex">\(\exists s \exists t \forall c (t &gt; 1 \wedge P(X_{tc} = s) &gt; 0 \wedge \forall n (n \mod t \not= 0 \rightarrow P(X_n = s) = 0)\)</span></p>
+<p>When this statement is satisfied, we say that the chain is periodic; its negation defines <em>aperiodicity</em>. Note that technically we also typically define periodicity in terms of an intial <span class="arithmatex">\(k\)</span> steps, saying that after <span class="arithmatex">\(k\)</span> steps the chain is periodic or aperiodic. We also typically define aperiodicity in terms of a starting state. </p>
+<h2 id="what-aperiodicity-really-gives-you">What aperiodicity really gives you</h2>
+<p>Aperiodicity is a property over the set of possible paths; it's really about your ability to sample. If a Markov chain is aperiodic, then after some initial period <span class="arithmatex">\(k\)</span>, the probability of observing any of the possible states at time n <span class="arithmatex">\(k+n, n &gt; 0\)</span> should be greater than one. So, even if a particular path has repeated structure and only visits a state every <span class="arithmatex">\(t\)</span> steps, another path could. </p>
+<p>One way you can informally verify this is to draw a branching structure for each possible state we can visit. </p>
+<div class="highlight"><pre><span></span><code>s1 ----&gt; s2
+  &lt;______/
+</code></pre></div>
+<p>This is where the start state is important: if we condition on starting in state s1, the chain is periodic, where <span class="arithmatex">\(t=2\)</span>. We can see this trivially because there is only one path out of each state. If we can drop into any state, then we can observe either s1 or s2 at any time step. However, we care about our ability of an arbitrary random walk to be able to access any state at some time <span class="arithmatex">\(k+n\)</span>. Most applications of Markov chains (and indeed, MDPs) do not allow us to start at arbitrary states (in fact, if we could do that, things would be a lot easier!). </p>
+<p>Now, we saw that when we add a self-loop to an irreducible Markov chain, we get aperiodicity, since we can stay in a state for any number of steps, which allows us to visit all reachable states at any time (and they are all reachable, since the chain is irreducible!):</p>
+<div class="highlight"><pre><span></span><code>            ____
+           /    \
+s1 ----&gt; s2&lt;----/
+  &lt;______/
+</code></pre></div>
+<p>We then saw an example of a chain where we had two connected loops:</p>
+<div class="highlight"><pre><span></span><code>s1 ----&gt; s2 ---&gt; s3 ----&gt; s4
+  &lt;______/        &lt;______/
+</code></pre></div>
+<p>This Markov chain is not irreducible, so we generally don't care about it, since there are states we will never visit, but it's also periodic, since once we get stuck in nodes (s3, s4), we visit each state with a period of 2. Note that we can visit s3 at any time step after <span class="arithmatex">\(k=2\)</span>.</p>
+<p>Let's update the chain again:</p>
+<div class="highlight"><pre><span></span><code>s1 ----&gt; s2 ---&gt; s3 ----&gt; s4
+  &lt;______/ &lt;_____/ &lt;_____/
+</code></pre></div>
+<p>We can expand the nodes reachable at any step from s1 to see whether a pattern emerges at each time step.
+In our diagram below, we merge nodes when it is convenient to do so (it has no special semantics and merely reduces redundancy at each time step:</p>
+<div class="highlight"><pre><span></span><code>0    1  2  3  4  5  6
+
+        s1    s1    s1 ...
+       /  \  /  \  /
+s1 - s2    s2    s2
+       \  /  \  /  \
+        s3    s3     s3 ...
+          \  / \   /
+           s4    s4
+</code></pre></div>
+<p>It should be clear that after <span class="arithmatex">\(k\)</span> = 1, all states have a period of 2. You can see in simulation for the Example 1 tab in this <a href="https://docs.google.com/spreadsheets/d/1vPEhaQ97wZBRIS2AO-8_bGAmfNj-_VNqbHd6JLWpi6M/edit?usp=sharing">Google sheet</a> that every 
+state has a non-zero probability of being visited every 2 steps.</p>
+<p>Now let's try another example:
+<div class="highlight"><pre><span></span><code>  _______________________
+ V                       \
+s1 ----&gt; s2 ---&gt; s3 ----&gt; s4
+  &lt;______/        &lt;_____/
+</code></pre></div></p>
+<p>Here is this example's expansion of states:</p>
+<div class="highlight"><pre><span></span><code>0    1    2    3    4    5 
+
+                    s1 - s2 ...
+                  /
+          s3 - s4
+        /         \
+s1 - s2             s3 - s4 ...
+        \         /
+          s1 - s2
+                  \
+                    s1 - s2 ...
+</code></pre></div>
+<p>Once again, our chain is periodic with a period of <span class="arithmatex">\(t=2\)</span>, which can be verified in the linked spreadsheet above. </p>
+<p>Now let's see what happens when we change the target of one of the arrows:</p>
+<div class="highlight"><pre><span></span><code>           ______________
+          V               \
+s1 ----&gt; s2 ---&gt; s3 ----&gt; s4
+  &lt;______/        &lt;_____/
+
+
+0    1    2    3    4    5    ...
+
+                    s1 - s2   ...
+                  /
+          s1 - s2
+        /         \
+s1 - s2             s3 - s4   ...
+        \         /
+          s3 - s4        s1   ...
+                  \    / 
+                    s2 
+                       \ 
+                         s3   ...
+</code></pre></div>
+<p>We can see this reflected in the spreadsheet for Example 3: after the fifth step, we have a nonzero probability of being in each state.</p>
+<p>Finally, note that if you play around with the starting state probabilities (row 7), you can obtain nonzero probabilities of being in each state very quickly. Aperiodicity is <em>not</em> defined in terms of the start state distribution, since by definition if you can start sampling from anywhere, you wouldn't need MCMC in the first place! Instead, aperiodicity is defined in terms of the <em>transition probabilities</em> with respect to specific states. For larger state systems, you can see this via the transition matrix taken to the <span class="arithmatex">\(t^{th}\)</span> power -- there will be a cluster of states with non-zero probabilities at these time steps that will have transition probabilities of 0 at the <span class="arithmatex">\((t+m)^{th}\)</span> state, where <span class="arithmatex">\(m \mod t \not= 0\)</span>.</p>
 
               
             </article>
