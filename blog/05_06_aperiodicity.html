@@ -1,0 +1,521 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Public Course Website for CS295A/CS395D S2022 at Universtiy of Vermont">
+      
+      
+        <meta name="author" content="Emma Tosch (etosch@uvm.edu)">
+      
+      
+        <link rel="canonical" href="https://uvm.edu/~etosch/CS295A-S22/blog/05_06_aperiodicity.html">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.10">
+    
+    
+      
+        <title>Another way to think about aperiodicity - Artificial Intelligence</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.d6be258b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#another-way-to-think-about-aperiodicity" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Artificial Intelligence" class="md-header__button md-logo" aria-label="Artificial Intelligence" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Artificial Intelligence
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Another way to think about aperiodicity
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/uvm-maple/CS295A-S22/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Artificial Intelligence" class="md-nav__button md-logo" aria-label="Artificial Intelligence" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Artificial Intelligence
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/uvm-maple/CS295A-S22/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        CS 295A/395D: Artificial Intelligence
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../syllabus.html" class="md-nav__link">
+        Syllabus
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedule.html" class="md-nav__link">
+        Schedule
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blogging_guidelines.html" class="md-nav__link">
+        Blogging Guidelines
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog.html" class="md-nav__link">
+        Course Blog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Programming Assignments
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Programming Assignments" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Programming Assignments
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assignments/1/programming_assignment_1.html" class="md-nav__link">
+        Programming Assignment 1: Logic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assignments/2/programming_assignment_2.html" class="md-nav__link">
+        Programming Assignment 2: Probabilistic State
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../covid_policies.html" class="md-nav__link">
+        Covid Policies
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UVM_resources.html" class="md-nav__link">
+        UVM Resources
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aperiodicity-formally" class="md-nav__link">
+    Aperiodicity, formally
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-aperiodicity-really-gives-you" class="md-nav__link">
+    What aperiodicity really gives you
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/uvm-maple/CS295A-S22/edit/master/docs/blog/05_06_aperiodicity.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="another-way-to-think-about-aperiodicity">Another way to think about aperiodicity</h1>
+<p>One of the concepts that students sometimes find confusing is what aperiodicity means in the context of Markov Chains: while it has to do with cycles in the transition graph, the presence of a cycle does not make a Markov chain periodic. However, the lack of cycles does make a Markoc chain aperiodic trivially &mdash; no cycles entails that the transition matrix cannot be irreducible. </p>
+<h2 id="aperiodicity-formally">Aperiodicity, formally</h2>
+<p>A Markov Chain is <em>periodic</em> iff there is at least one state such that, for some t &gt; 1, we can only visit that state every t steps. We can express this using first order logic like so:</p>
+<p><span class="arithmatex">\(\exists s \exists t \forall c (t &gt; 1 \wedge P(X_{tc} = s) &gt; 0 \wedge \forall n (n \mod t \not= 0 \rightarrow P(X_n = s) = 0)\)</span></p>
+<p>When this statement is satisfied, we say that the chain is periodic; its negation defines <em>aperiodicity</em>. Note that technically we also typically define periodicity in terms of an intial <span class="arithmatex">\(k\)</span> steps, saying that after <span class="arithmatex">\(k\)</span> steps the chain is periodic or aperiodic. We also typically define aperiodicity in terms of a starting state. </p>
+<h2 id="what-aperiodicity-really-gives-you">What aperiodicity really gives you</h2>
+<p>Aperiodicity is a property over the set of possible paths; it's really about your ability to sample. If a Markov chain is aperiodic, then after some initial period <span class="arithmatex">\(k\)</span>, the probability of observing any of the possible states at time n <span class="arithmatex">\(k+n, n &gt; 0\)</span> should be greater than one. So, even if a particular path has repeated structure and only visits a state every <span class="arithmatex">\(t\)</span> steps, another path could. </p>
+<p>One way you can informally verify this is to draw a branching structure for each possible state we can visit. </p>
+<div class="highlight"><pre><span></span><code>s1 ----&gt; s2
+  &lt;______/
+</code></pre></div>
+<p>This is where the start state is important: if we condition on starting in state s1, the chain is periodic, where <span class="arithmatex">\(t=2\)</span>. We can see this trivially because there is only one path out of each state. If we can drop into any state, then we can observe either s1 or s2 at any time step. However, we care about our ability of an arbitrary random walk to be able to access any state at some time <span class="arithmatex">\(k+n\)</span>. Most applications of Markov chains (and indeed, MDPs) do not allow us to start at arbitrary states (in fact, if we could do that, things would be a lot easier!). </p>
+<p>Now, we saw that when we add a self-loop to an irreducible Markov chain, we get aperiodicity, since we can stay in a state for any number of steps, which allows us to visit all reachable states at any time (and they are all reachable, since the chain is irreducible!):</p>
+<div class="highlight"><pre><span></span><code>            ____
+           /    \
+s1 ----&gt; s2&lt;----/
+  &lt;______/
+</code></pre></div>
+<p>We then saw an example of a chain where we had two connected loops:</p>
+<div class="highlight"><pre><span></span><code>s1 ----&gt; s2 ---&gt; s3 ----&gt; s4
+  &lt;______/        &lt;______/
+</code></pre></div>
+<p>This Markov chain is not irreducible, so we generally don't care about it, since there are states we will never visit, but it's also periodic, since once we get stuck in nodes (s3, s4), we visit each state with a period of 2. Note that we can visit s3 at any time step after <span class="arithmatex">\(k=2\)</span>.</p>
+<p>Let's update the chain again:</p>
+<div class="highlight"><pre><span></span><code>s1 ----&gt; s2 ---&gt; s3 ----&gt; s4
+  &lt;______/ &lt;_____/ &lt;_____/
+</code></pre></div>
+<p>We can expand the nodes reachable at any step from s1 to see whether a pattern emerges at each time step.
+In our diagram below, we merge nodes when it is convenient to do so (it has no special semantics and merely reduces redundancy at each time step:</p>
+<div class="highlight"><pre><span></span><code>0    1  2  3  4  5  6
+
+        s1    s1    s1 ...
+       /  \  /  \  /
+s1 - s2    s2    s2
+       \  /  \  /  \
+        s3    s3     s3 ...
+          \  / \   /
+           s4    s4
+</code></pre></div>
+<p>It should be clear that after <span class="arithmatex">\(k\)</span> = 1, all states have a period of 2. You can see in simulation for the Example 1 tab in this <a href="https://docs.google.com/spreadsheets/d/1vPEhaQ97wZBRIS2AO-8_bGAmfNj-_VNqbHd6JLWpi6M/edit?usp=sharing">Google sheet</a> that every 
+state has a non-zero probability of being visited every 2 steps.</p>
+<p>Now let's try another example:
+<div class="highlight"><pre><span></span><code>  _______________________
+ V                       \
+s1 ----&gt; s2 ---&gt; s3 ----&gt; s4
+  &lt;______/        &lt;_____/
+</code></pre></div></p>
+<p>Here is this example's expansion of states:</p>
+<div class="highlight"><pre><span></span><code>0    1    2    3    4    5 
+
+                    s1 - s2 ...
+                  /
+          s3 - s4
+        /         \
+s1 - s2             s3 - s4 ...
+        \         /
+          s1 - s2
+                  \
+                    s1 - s2 ...
+</code></pre></div>
+<p>Once again, our chain is periodic with a period of <span class="arithmatex">\(t=2\)</span>, which can be verified in the linked spreadsheet above. </p>
+<p>Now let's see what happens when we change the target of one of the arrows:</p>
+<div class="highlight"><pre><span></span><code>           ______________
+          V               \
+s1 ----&gt; s2 ---&gt; s3 ----&gt; s4
+  &lt;______/        &lt;_____/
+
+
+0    1    2    3    4    5    ...
+
+                    s1 - s2   ...
+                  /
+          s1 - s2
+        /         \
+s1 - s2             s3 - s4   ...
+        \         /
+          s3 - s4        s1   ...
+                  \    / 
+                    s2 
+                       \ 
+                         s3   ...
+</code></pre></div>
+<p>We can see this reflected in the spreadsheet for Example 3: after the fifth step, we have a nonzero probability of being in each state.</p>
+<p>Finally, note that if you play around with the starting state probabilities (row 7), you can obtain nonzero probabilities of being in each state very quickly. Aperiodicity is <em>not</em> defined in terms of the start state distribution, since by definition if you can start sampling from anywhere, you wouldn't need MCMC in the first place! Instead, aperiodicity is defined in terms of the <em>transition probabilities</em> with respect to specific states. For larger state systems, you can see this via the transition matrix taken to the <span class="arithmatex">\(t^{th}\)</span> power -- there will be a cluster of states with non-zero probabilities at these time steps that will have transition probabilities of 0 at the <span class="arithmatex">\((t+m)^{th}\)</span> state, where <span class="arithmatex">\(m \mod t \not= 0\)</span>.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e3b2bf44.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

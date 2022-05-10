@@ -624,7 +624,7 @@ conditional ::= &quot;|&quot; &lt;joint&gt; [&lt;do&gt;]
 </ol>
 <p>This final step can be framed as a search problem. Your initial state is the factorized distribution and your final state is an expression equivalent to the input query. Each action you take is the application of a rule to a point in a data structure representing the term you are rewriting:</p>
 <ol>
-<li>Bayes Rule (<span class="arithmatex">\(P(X\mid Y) = P(Y\mid X)P(X)/P(Y)\)</span>).</li>
+<li>Bayes Rule (<span class="arithmatex">\(P(X\mid Y) = P(Y\mid Y)P(Y)/P(X)\)</span>).</li>
 <li>Multiplication/Chain Rule/Conditional probability (<span class="arithmatex">\(P(X, Y) = P(X\mid Y)P(Y)\)</span>).</li>
 <li>Law of total probability/marginalization (<span class="arithmatex">\(\sum_{y\in\mathcal{Y}} P(X, Y=y) = P(X)\)</span>).</li>
 <li>Unit measure (<span class="arithmatex">\(\sum_{x\in\mathcal{X}} P(X=x) = 1\)</span>).</li>
@@ -657,7 +657,6 @@ conditional ::= &quot;|&quot; &lt;joint&gt; [&lt;do&gt;]
 <li>whether the best stategy is the same under coordination</li>
 </ul>
 <p>You will then generate games according to these specifications, along with their solutions. <strong>All rewards should be integer-valued.</strong></p>
-<p>You may want use the tutorial on <a href="https://www.cs.cmu.edu/afs/cs/academic/class/15859-f01/www/notes/mat.pdf">two-person zero-sum games</a> linked in the course schedule. <em>Note that in this document, Player 1 chooses a row, whereas our Player 1 chooses a column</em>.</p>
 <h3 id="simulation">Simulation</h3>
 <p>In addition to the core program, you should write a simulator that plays two agents against each other for multiple games. Create a suite of at least three agents, each of which may have some or all of the following characteristics:</p>
 <p><strong>Starting strategies</strong></p>
