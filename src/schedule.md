@@ -37,12 +37,12 @@ Huth and Ryan is an excellent introductory text for temporal and epistemic logic
 | Fri, Feb 11 | Background: Discrete Probability Theory | Lecture | **Programming Assignment 1 due (soft)** |
 | Mon, Feb 14 | **CANCELLED** |  ||
 | Wed, Feb 16 | **CANCELLED** |  || 
-| Fri, Feb 18 | Search Agents | [Lecture (Michael)](lectures/AI_M_Lecture1.pdf) | R&N 2.1-4| 
+| Fri, Feb 18 | Search Agents | [Lecture (Michael)](lectures/AI_M_Lecture_1.pdf) | R&N 2.1-4| 
 | Mon, Feb 21 | **President's Day** | **No Class** | |
-| Wed, Feb 23 | Uninformed Search | [Lecture (Michael)](lectures/AI_M_Lecture2.pdf) | R&N 3.1-4 | 
+| Wed, Feb 23 | Uninformed Search | [Lecture (Michael)](lectures/AI_M_Lecture_2.pdf) | R&N 3.1-4 | 
 | Fri, Feb 25 | In-Class Activity: Search | Lecture (Michael) || 
-| Mon, Feb 28 | A* and Adversarial Search | [Lecture (Michael)](lectures/AI_M_Lecture4.pdf)| R&N 3.5-6, 5.1-3| 
-| Wed, Mar 2  | Constraint Satisfaction Problems | [Lecture (Michael)](lectures/AI_M_Lecture5.pdf) | R&N 6.1-5 |
+| Mon, Feb 28 | A* and Adversarial Search | [Lecture (Michael)](lectures/AI_M_Lecture_4.pdf)| R&N 3.5-6, 5.1-3| 
+| Wed, Mar 2  | Constraint Satisfaction Problems | [Lecture (Michael)](lectures/AI_M_Lecture_5.pdf) | R&N 6.1-5 |
 | Fri, Mar 4  | In-Class Actibity: CSP |  Lecture (Michael) || 
 | Mon, Mar 7  | **Spring Recess** | **No Class** ||
 | Wed, Mar 9  | **Spring Recess** | **No Class** ||

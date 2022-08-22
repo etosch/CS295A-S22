@@ -1,0 +1,503 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Public Course Website for CS295A/CS395D S2022 at Universtiy of Vermont">
+      
+      
+        <meta name="author" content="Emma Tosch (etosch@uvm.edu)">
+      
+      
+        <link rel="canonical" href="https://uvm.edu/~etosch/CS295A-S22/blog/03_31_decision_theory.html">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.10">
+    
+    
+      
+        <title>Basic Decision Theory - Artificial Intelligence</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.d6be258b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#basic-decision-theory" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Artificial Intelligence" class="md-header__button md-logo" aria-label="Artificial Intelligence" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Artificial Intelligence
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Basic Decision Theory
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/uvm-maple/CS295A-S22/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Artificial Intelligence" class="md-nav__button md-logo" aria-label="Artificial Intelligence" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Artificial Intelligence
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/uvm-maple/CS295A-S22/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        CS 295A/395D: Artificial Intelligence
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../syllabus.html" class="md-nav__link">
+        Syllabus
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedule.html" class="md-nav__link">
+        Schedule
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blogging_guidelines.html" class="md-nav__link">
+        Blogging Guidelines
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog.html" class="md-nav__link">
+        Course Blog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Programming Assignments
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Programming Assignments" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Programming Assignments
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assignments/1/programming_assignment_1.html" class="md-nav__link">
+        Programming Assignment 1: Logic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assignments/2/programming_assignment_2.html" class="md-nav__link">
+        Programming Assignment 2: Probabilistic State
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../covid_policies.html" class="md-nav__link">
+        Covid Policies
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UVM_resources.html" class="md-nav__link">
+        UVM Resources
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/uvm-maple/CS295A-S22/edit/master/docs/blog/03_31_decision_theory.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="basic-decision-theory">Basic Decision Theory</h1>
+<p>In class, we saw an example of decision theory: we had the choice between buying two cars, <span class="arithmatex">\(C_1\)</span> and <span class="arithmatex">\(C_2\)</span> (we could not decide to not buy a car) and we had the option of running at most one test on one of the cars, where test <span class="arithmatex">\(T_1\)</span> could only be used on car 1 and test <span class="arithmatex">\(T_2\)</span> could only be used on car 2: you can think about this as if the manufacturer created the tests, so you cannot apply <span class="arithmatex">\(T_1\)</span> on <span class="arithmatex">\(C_2\)</span> and vice versa. </p>
+<p>We were also told the following information about the cars and tests:</p>
+<ul>
+<li>Car <span class="arithmatex">\(C_1\)</span> costs $500 below the market rate.<ul>
+<li>If <span class="arithmatex">\(C_1\)</span> is faulty (i.e., <span class="arithmatex">\(C_1\)</span> = -), then it costs $700 to repair.</li>
+</ul>
+</li>
+<li>Car <span class="arithmatex">\(C_1\)</span> is not faulty with probability 0.7.</li>
+<li>
+<p>Test <span class="arithmatex">\(T_1\)</span> tells us whether <span class="arithmatex">\(C_1\)</span> is faulty or not and costs $50.</p>
+<ul>
+<li><span class="arithmatex">\(T_1\)</span> is a true positive 80% of the time.</li>
+<li><span class="arithmatex">\(T_1\)</span> is a true negative 65% of the time. </li>
+</ul>
+</li>
+<li>
+<p>Car <span class="arithmatex">\(C_2\)</span> costs $250 below the market rate.</p>
+<ul>
+<li>If <span class="arithmatex">\(C_2\)</span> is faulty (i.e., <span class="arithmatex">\(C_2\)</span> = 0), then it costs $150 to repair.</li>
+</ul>
+</li>
+<li>Car <span class="arithmatex">\(C_2\)</span> is not faulty with probability 0.8.</li>
+<li>Test <span class="arithmatex">\(T_2\)</span> tells us whether <span class="arithmatex">\(C_1\)</span> is faulty or not and costs $20.<ul>
+<li><span class="arithmatex">\(T_2\)</span> is a true positive 75% of the time.</li>
+<li><span class="arithmatex">\(T_2\)</span> is a true negative 70% of the time. </li>
+</ul>
+</li>
+</ul>
+<p>From this information, we can enumerate some facts from this information alone:</p>
+<ol>
+<li><span class="arithmatex">\(P(C_1 = +) = 0.7\)</span></li>
+<li><span class="arithmatex">\(P(C_1 = -) = 0.3\)</span><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+<li><span class="arithmatex">\(P(C_2 = +) = 0.8\)</span></li>
+<li><span class="arithmatex">\(P(C_2 = -) = 0.2\)</span><sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+<li><span class="arithmatex">\(P(T_1 = + \mid C_1 = +) = 0.8\)</span></li>
+<li><span class="arithmatex">\(P(T_1 = - \mid C_1 = +) = 0.2\)</span><sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+<li><span class="arithmatex">\(P(T_1 = + \mid C_1 = -) = 0.35\)</span><sup id="fnref4:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+<li><span class="arithmatex">\(P(T_1 = - \mid C_1 = -) = 0.65\)</span></li>
+<li><span class="arithmatex">\(P(T_2 = + \mid C_2 = +) = 0.75\)</span></li>
+<li><span class="arithmatex">\(P(T_2 = - \mid C_2 = +) = 0.25\)</span><sup id="fnref5:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+<li><span class="arithmatex">\(P(T_2 = + \mid C_2 = -) = 0.3\)</span><sup id="fnref6:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+<li><span class="arithmatex">\(P(T_2 = - \mid C_2 = -) = 0.7\)</span></li>
+</ol>
+<p>Now, the first thing we did was consider the case where we run no test. Since there is no direct cost associated with not running the test, we only need to compute the expected utility (cost) of each car:</p>
+<p><span class="arithmatex">\(EU[C_1] = P(C_1 = +)(cost) + P(C_1 = -)(cost + repair) = 0.7*(-500) + 0.3*(-500+700) = -290\)</span>
+<span class="arithmatex">\(EU[C_2] = P(C_2 = +)(cost) + P(C_2 = -)(cost + repair) = 0.8*(-250) + 0.2*(-250+150) = -220\)</span></p>
+<p>Since we want to minimize cost, we choose the car with the minimum expected utility (car 1).</p>
+<p>The next thing we did was ask: suppose we decided to run test 1. Given the result of that test, which car should we choose?</p>
+<p>We need to break this problem into cases: the first case will condition on the the test returning + and the second case will condition on the test returning -. As part of your homework, you will work your way up to making a decision about which test to run, but first we are going to reason about adding in a small amount of additional uncertainty.</p>
+<p><span class="arithmatex">\(EU[C_1 \mid T_1 = +] = P(C_1 = + \mid T_1 = +)(cost + test) + P(C_1 = - \mid T_1 = +)(cost + repair + test)\)</span></p>
+<p>Note that we do not currently have <span class="arithmatex">\(P(C_1 = + \mid T_1 = +)\)</span>. Therefore, we must calculate it. Let's use Bayes Rule:</p>
+<p><span class="arithmatex">\(P(C_1 = + \mid T_1 = +) = P(T_1 = + \mid C_1 = +)P(C_1 = +)/P(T_1 = +)\)</span></p>
+<p>While we have the first two terms necessary (from our given information), we do not currently have <span class="arithmatex">\(P(T_1 = +)\)</span>. We will need to calculate this as well. Recall that we can use the law of total probability to marginalize out a variable:</p>
+<p><span class="arithmatex">\(P(T_1 = +) = P(T_1 = +, C_1 = +) + P(T_1 = +, C_1 = -)\)</span></p>
+<p>Although we do not have the joint probability of <span class="arithmatex">\(T_1\)</span> and <span class="arithmatex">\(C_1\)</span> directly, we can use the definition of conditional probability and substitute in values we do have:</p>
+<p><span class="arithmatex">\(P(T_1 = +) = P(T_1 = + \mid C_1 = +)P(C_1 = +) + P(T_1 = + \mid C_1 = -)P(C_1 = -)\)</span> 
+<span class="arithmatex">\(= 0.8*0.7 + 0.35*0.3 \approx 0.665\)</span></p>
+<p>Thus, we have two additional quantities to add to our list of known probabilities:</p>
+<ol>
+<li><span class="arithmatex">\(P(T_1 = +) = 0.665\)</span></li>
+<li><span class="arithmatex">\(P(T_1 = -) = 0.335\)</span></li>
+</ol>
+<p>Now we can compute <span class="arithmatex">\(P(C_1 = + \mid T_1 = +)\)</span> (and consequently <span class="arithmatex">\(P(C_1 = - \mid T_1 = +)\)</span>):</p>
+<ol>
+<li><span class="arithmatex">\(P(C_1 = + \mid T_1 = +) = 0.8*0.7/0.665 \approx 0.842\)</span></li>
+<li><span class="arithmatex">\(P(C_1 = - \mid T_1 = +) = 0.158\)</span></li>
+</ol>
+<p>And thus:</p>
+<p><span class="arithmatex">\(EU[C_1 \mid T_1 = +] = 0.842(-500+50) + 0.158(-500+700+50) \approx -339\)</span></p>
+<p>Now, since we are conditioning on having already performed the test, we need to compare with the exepected utility of car 2, given the outcome of the test:</p>
+<p><span class="arithmatex">\(EU[C_2 \mid T_1 = +] = P(C_1 = + \mid T_1 = +)(cost + test) + P(C_1=-\mid T_1 = +)(cost + test + repair)\)</span></p>
+<p>However, since test 1 doesn't tell us anything about car 2, we know that <span class="arithmatex">\(C_1\)</span> is independent of <span class="arithmatex">\(T_1\)</span>.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+<p><span class="arithmatex">\(EU[C_2 \mid T_1 = +] = P(C_2 = +)(cost + test) + P(C_2=-)(cost + test + repair)\)</span> 
+<span class="arithmatex">\(= 0.8*(-250 + 20) + 0.2*(-250 + 150 + 20) = -200\)</span></p>
+<p>Now we want to choose the car that minimizes the expected cost (<span class="arithmatex">\(min\{-339, -200\}\)</span>) and so we choose car 1. </p>
+<p>Remember that so far we have only computed the optimum choice for what car to buy under two conditions: no test and when test <span class="arithmatex">\(T_1\)</span> is +. In class we discussed how computing the case for <span class="arithmatex">\(T_1 = -\)</span> causes us to choose a different outcome: we decide to purchase car 2 when <span class="arithmatex">\(T_1\)</span> returns -. </p>
+<p>The homework assignment asks you to perform a similar process for car 2 and it asks you to compute the expected utility of each test. (i.e., <span class="arithmatex">\(E[T_1]\)</span> and <span class="arithmatex">\(E[T_2]\)</span>). If you get stuck on this part, remember to enumerate the outcomes and their costs (which may be expected values) (e.g., there are only two possible outcomes for <span class="arithmatex">\(T_1\)</span>: the case where it is positive and you choose car 1 and the case where it is negative and you choose car 2).</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>These quantities were all calculated using the law of total probability from the information given.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>This is an example of how belief or epistemic uncertainty impacts probabilities. We might think of both test accuracy and car quality as aleatory uncertainty due to, e.g., the randomness of flaws in the manufacturing process for the test or the randomness of part degredation for the car. However, when we are making decisions, we treat these random processes as our baseline beliefs about car quality. Although the probability that a random car is faulty might be due to a truly random process, our belief about its current state can be updated in light of new information &mdash; even though the test does not change anything about the mechanism that causes the car to be faulty.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e3b2bf44.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
